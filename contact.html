@@ -63,24 +63,24 @@
               <p class="contact-info">
                   <a title="facebook.com/alemdanota" href="http://facebook.com/alemdanota">facebook.com/alemdanota</a><br/>
                   <a href="mailto:contato@alemdanota.com.br" title="contato@alemdanota.com.br">contato@alemdanota.com.br</a><br/>
-                  (21) XXXX-XXXX
+                  (21) 97381-9591
               </p>
             </h2>
           </div>
           <div>
-              <form class="contact-form" action="">
+              <form class="contact-form" action="_inc/send_mail.php" method="POST">
                 <span>
-                  <input onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nome'" type="text" placeholder="Nome">
+                  <input id="user_nome" name="user_nome" maxlength="40" minlength="3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nome'" type="text" placeholder="Nome">
                 </span>
                 <span>
-                  <input onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" type="email" placeholder="E-mail">
+                  <input id="user_email" name="user_email" maxlength="50" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" type="email" placeholder="E-mail">
                 </span>
                 <span>
-                  <textarea onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensagem'" placeholder="Mensagem"></textarea>
+                  <textarea id="user_msg" minlength="10" maxlength="2000" name="user_msg" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensagem'" placeholder="Mensagem"></textarea>
                 </span>
                 <span>
                   <input type="submit" value="Enviar por Email" class="btn -yellow"> 
-                  <input type="submit" value="Enviar por WhatsApp" class="btn -green">  
+                  <input id="whatsapp" onclick="whatsapp();" type="submit" value="Enviar por WhatsApp" class="btn -green">  
                 </span>
               </form>
           </div>
