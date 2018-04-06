@@ -46,7 +46,9 @@
     &-caption
         align-items: center
         color: white
-        display: none     
+        display: none   
+        +mq('1365px', max)
+            display: none!important  
         font-family: 'Mosk Ultra-Bold 900'
         +rem('font-size', 12px)
         justify-content: center
@@ -156,10 +158,11 @@
                     transform: scale(1.1)
                 100% 
                     transform: scale(1)    
-            &:hover
-                animation: scaling 1s ease-out alternate   
-                [class*="caption"]
-                    @extend .flex  
+            +mq('1366px', min)
+                &:hover
+                    animation: scaling 1s ease-out alternate   
+                    [class*="caption"]
+                        display: flex  
             align-items: inherit
             @extend .flex
             flex-flow: column wrap 
