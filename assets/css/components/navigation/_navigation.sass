@@ -1,0 +1,101 @@
+.navigation
+    >ul 
+        >li 
+            color: white
+            display: inline-block 
+            font-family: 'Mosk Extra-Bold 800'
+            +rem('font-size', 16px)
+            position: relative
+            vertical-align: middle
+            >img 
+                display: none 
+                position: absolute 
+                width: 400px
+            >a 
+                position: relative
+                z-index: 2
+            &.-active
+                &:last-child
+                    &::after
+                        display: none
+            &:last-child
+                display: none 
+                @media only screen and (max-width:1024px) and (orientation: landscape),
+                screen and (max-width:1023px)   
+                    display: block  
+                z-index: 999
+                >*
+                    z-index: 2
+                &::after
+                    bottom: 0
+                    content: url(assets/imgs/menu.png)
+                    display: block 
+                    right: 0
+                    margin: -10px
+                    position: absolute 
+                    z-index: 1
+            &:not(:last-child):not(:nth-last-child(2))
+                margin-right: 80px
+                +mq('1440px', min) 
+                    margin-right: 160px
+            &:not(:last-child)
+                @media only screen and (max-width:1024px) and (orientation: landscape),
+                screen and (max-width:1023px)   
+                    display: none                                    
+    &.-mobile
+        background: url(assets/imgs/nav-mobile.png) center center / 100% 100% no-repeat rgba(3,16,44,.6)  
+        +animation('backgroundNavMobile', 500ms) 
+        display: none
+        @media only screen and (max-width:1024px)
+            &.-active
+                display: block   
+                &+.header
+                    z-index: initial
+        height: calc(100% + 20px)
+        left: 0
+        position: absolute
+        top: 0
+        width: 100%
+        z-index: 999
+        >ul 
+            background-color: $darkyellow
+            @extend .flex
+            flex-flow: column wrap
+            height: 100%
+            width: 90px
+            >li 
+                align-items: center
+                display: flex
+                flex-flow: row wrap
+                margin-right: 0!important
+                position: relative
+                +transition(3500ms)
+                height: 90px
+                width: 250px
+                @for $i from 1 through 4
+                    &:nth-child(#{$i})
+                        @include animation(lefToRight,(10s*$i)/50)       
+                >a 
+                    flex: 1
+                    font-family: 'Mosk Ultra-Bold 900'
+                    padding-left: 15px
+                    text-transform: uppercase
+                @for $i from 1 through 5
+                    &:not(:last-child):nth-child(#{$i})
+                        &:before
+                            background: url(assets/imgs/ico-menu-#{$i}.png) center center no-repeat transparent 
+                            content: ""
+                            flex: 0 0 auto
+                            height: 90px
+                            width: 90px   
+                &:last-child
+                    bottom: 0
+                    left: 0
+                    position: absolute 
+                    width: 90px        
+                    >a 
+                        padding-left: 0
+                        text-align: center
+                &::after
+                    display: none
+                

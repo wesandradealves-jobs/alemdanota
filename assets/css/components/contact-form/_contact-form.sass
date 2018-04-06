@@ -1,0 +1,100 @@
+.contact-form
+    >span
+        &:not(:last-child)
+            border-bottom: 10px $yellow solid
+            color: white
+            display: block
+            +rem('font-size', 16.73px)
+            font-family: 'Mosk Ultra-Bold 900'
+            margin-bottom: 48px 
+            +mq('1440px', max) 
+                margin-bottom: 20px
+            max-width: 80%
+            +mq('836px', max) 
+                max-width: 100%
+            padding-bottom: 9px
+            text-transform: uppercase
+            width: 100% 
+            input,
+            textarea 
+                background-color: transparent 
+                display: inherit 
+                font-family: inherit
+                font-size: inherit
+                text-transform: inherit
+                width: inherit
+        &:nth-last-child(2)
+            margin-bottom: 100px
+            +mq('1440px', max) 
+                margin-bottom: 45px
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px) 
+                margin-bottom: 20px
+        &:last-child
+            left: 50px     
+            +mq('1440px', max) 
+                left: 65px
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)  
+                left: 0
+    .btn
+        background: none 
+        color: white 
+        display: inline-block
+        +mq('836px', max) 
+            display: block 
+        +rem('font-size', 19px) 
+        +mq('1440px', max) 
+            +rem('font-size', 14px)
+        font-family: 'Mosk Ultra-Bold 900'
+        height: 190px
+        +mq('1440px', max)  
+            height: 120px
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)    
+            height: 90px            
+        +mq('836px', max) 
+            height: 46px
+        padding: 0 145px
+        +mq('1440px', max) 
+            padding: 0 80px   
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)  
+            padding: 0 50px           
+        +mq('836px', max) 
+            padding: 0 0
+        vertical-align: middle
+        white-space: pre-line
+        word-wrap: break-word
+        &.-yellow
+            background: url(assets/imgs/svg/btn-1.svg) center center / 100% 100% no-repeat transparent
+            +mq('836px', max) 
+                background-image: url(assets/imgs/submit-btn-yellow-mobile.png)            
+            margin-right: -40px
+            margin-left: 0
+            width: 435px
+            +mq('1440px', max) 
+                width: 270px
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)  
+                margin-right: -35px  
+                width: 210px     
+            +mq('836px', max) 
+                margin-right: auto 
+                margin-left: auto
+                width: 100% 
+        &.-green
+            background: url(assets/imgs/svg/btn-2.svg) center center / 100% 100% no-repeat transparent
+            +mq('836px', max) 
+                background-image: url(assets/imgs/submit-btn-green-mobile.png)
+            width: 400px
+            +mq('1440px', max) 
+                width: 240px
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)  
+                width: 190px
+            +mq('836px', max) 
+                margin-left: auto 
+                margin-right: auto
+                margin-top: 20px
+                width: 100%                       

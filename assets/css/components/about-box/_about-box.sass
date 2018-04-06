@@ -1,0 +1,148 @@
+.about-box
+    background: url(assets/imgs/svg/about-box.svg) right center / contain no-repeat transparent
+    +mq('836px', max)
+        background: none
+    bottom: 150px
+    +mq('1680px', max) 
+        bottom: 250px
+    +mq('1600px', max)
+        bottom: 150px 
+    +mq('1440px', max)
+        bottom: 130px
+    +mq('1366px', max) 
+        bottom: 80px
+    +mq('1024px', max) 
+        bottom: 160px
+    +mq('836px', max)
+        bottom: initial
+    display: block
+    flex: 0 0 auto
+    margin-left: calc(-710.5px/2)
+    +mq('1680px', max) 
+        margin-left: calc(-390.5px/2)
+    +mq('1440px', max)
+        margin-left: calc(-600.5px/2)
+    +mq('1366px', max) 
+        margin-left: calc(-420.5px/2)
+    +mq('1024px', max) 
+        margin-left: calc(-590.5px/2)
+    +mq('836px', max)
+        margin-left: auto
+        margin-right: auto 
+    position: absolute 
+    +mq('836px', max)
+        position: relative
+    left: 50%
+    +mq('836px', max)
+        left: 0
+    height: 650.5px
+    width: 1025.5px
+    +mq('1680px', max) 
+        height: 475.5px
+        width: 755.5px
+    +mq('1366px', max) 
+        height: 435.5px
+        width: 695.5px    
+    +mq('836px', max)
+        width: 100%
+    z-index: 4
+    &-pagination
+        display: block 
+        position: absolute
+        right: -8px
+        top: 130px
+        +mq('1680px', max) 
+            top: 74px
+        +mq('1366px', max) 
+            top: 60px
+        +mq('836px', max) 
+            position: relative
+            right: 0
+            top: 0
+            text-align: center
+        >li 
+            &.-active
+                background-color: $yellow
+            &:not(:last-child)
+                margin-bottom: 25px
+                +mq('836px', max) 
+                    margin-bottom: 0
+            background-color: white 
+            display: block
+            +mq('836px', max) 
+                display: inline-block
+                margin: 0 5px
+                vertical-align: middle
+            height: 25px 
+            width: 25px
+            +mq('320px', max) 
+                height: 15px
+                width: 15px
+                margin: 0 3px
+    &-navigation
+        display: block 
+        position: absolute
+        right: -120px
+        +mq('1024px', max)
+            right: -90px
+        top: calc(50% - 210px)
+        +mq('1680px', max) 
+            top: calc(50% - 175px)
+        +mq('1366px', max) 
+            top:calc(50% - 170px)
+        +mq('836px', max) 
+            top: 0
+            right: 0
+            position: relative
+            display: flex
+            flex-flow: row wrap
+            justify-content: space-between
+            align-items: center
+            padding: 0 30px 
+            margin: -40px auto 0
+        button 
+            background: url('assets/imgs/svg/arrow.svg') center center / contain no-repeat transparent
+            cursor: pointer
+            display: block
+            height: 60px
+            transform: rotate(180deg)
+            width: 60px
+            +mq('836px', max) 
+                filter: grayscale(1) brightness(3)
+            &.-disabled
+                opacity: .3 
+                pointer-events: none 
+            &.text-up
+                +mq('836px', max) 
+                    transform: rotate(90deg)
+            &.text-down
+                margin-top: 80px
+                transform: rotate(360deg)
+                transform-origin: center center
+                +mq('836px', max) 
+                    margin-top: 0
+                    transform: rotate(-90deg)
+    &-content
+        display: block
+        height: calc(100% - 110px)
+        overflow: hidden
+        +mq('836px', max) 
+            margin-bottom: 60px
+        padding: 0 50px 0 265px
+        +mq('1680px', max) 
+            padding: 0 50px 0 185px
+        +mq('836px', max)
+            padding: 0 30px
+        top: 55px
+        +mq('836px', max)
+            top: initial
+        width: 100%
+        >p 
+            color: white
+            display: block 
+            +rem('font-size', 16px)
+            overflow: hidden
+            +transition(500ms)
+            text-align: justify
+            top: 0
+            width: 100%

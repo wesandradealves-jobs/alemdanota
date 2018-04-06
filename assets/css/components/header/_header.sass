@@ -1,0 +1,19 @@
+.header
+    flex: 0 0 auto
+    width: 100%
+    z-index: 10
+    >.container
+        align-items: center
+        @extend .flex
+        flex-flow: row wrap 
+        justify-content: space-between
+        +mq('1366px', max)
+            max-width: 1366px
+        padding-top: 30px
+        >.logo
+            flex: 1
+            +mq('1366px', min) 
+                +animation(2000ms, logo)  
+        >.navigation
+            flex: 0 0 auto
+            text-align: right

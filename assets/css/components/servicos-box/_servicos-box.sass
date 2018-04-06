@@ -1,0 +1,171 @@
+.servicos-box
+    flex: 1
+    padding-left: 60px
+    @media only screen and (max-width:1024px) and (orientation: landscape),
+    screen and (max-width:1023px)
+        padding-left: 0    
+    .btn
+        color: white 
+        display: block
+        height: 45px
+        +rem('font-size', 16px)
+        margin: 60px auto 0
+        +mq('1024px', max)    
+            margin: 40px auto 0
+        +mq('414px', max) 
+            margin: 0 auto     
+        position: relative 
+        text-align: center  
+        width: 320px
+        +mq('320px', max)   
+            width: 100%
+        span 
+            line-height: 45px
+            position: relative
+            z-index: 2
+        img,
+        svg
+            display: block
+            height: 100%
+            left: 0
+            position: absolute 
+            top: 0
+            z-index: 1
+            +mq('320px', max)   
+                width: 100%
+    &-caption
+        align-items: center
+        color: white
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)
+            display: none        
+        @extend .flex
+        font-family: 'Mosk Ultra-Bold 900'
+        +rem('font-size', 12px)
+        justify-content: center
+        height: 89px
+        +mq('1024px', max)
+            height: 70px
+        padding: 5px
+        position: absolute 
+        right: -130px
+        top: 20px
+        +mq('1024px', max)
+            top: -20px
+        text-align: center
+        width: 120px
+        +mq('1024px', max)
+            width: 95px
+        p 
+            padding-left: 20px
+            padding-right: 20px
+            word-wrap: break-word            
+            width: 100%
+        svg,
+        img 
+            display: block 
+            height: 100%
+            left: 0
+            position: absolute 
+            top: 0
+    &-content
+        margin-top: 40px
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)   
+            max-width: 568px
+            margin-left: auto
+            margin-right: auto    
+            padding: 0 30px        
+        >div
+            align-items: flex-start
+            color: white 
+            @extend .flex
+            flex-flow: row wrap 
+            justify-content: space-between
+            &:not(.-active)
+                display: none
+            >h3 
+                flex: 0 0 auto
+                font-family: 'Mosk Ultra-Bold 900'
+                +rem('font-size', 25.25px)
+                margin-right: 50px
+                margin-left: -340px
+                text-align: right
+                text-transform: uppercase
+                width: 290px
+                @media only screen and (max-width:1024px) and (orientation: landscape),
+                screen and (max-width:1023px)     
+                    display: none             
+            >p 
+                flex: 1
+                +rem('font-size', 16px)
+                overflow: hidden
+                text-align: justify
+                +mq('414px', max) 
+                    >span 
+                        display: none
+    &-navigation
+        align-items: center
+        @extend .flex
+        flex-flow: row wrap 
+        +transition(500ms)
+        justify-content: space-between 
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)   
+            max-width: 768px
+            margin-left: auto
+            margin-right: auto   
+        +mq('768px', max) 
+            padding-left: 30px
+            padding-right: 30px
+        +mq('414px', max) 
+            left: 120px
+            max-width: initial 
+            width: 720px    
+            padding-left: 0
+            padding-right: 0
+        +mq('320px', max)    
+            left: 80px
+        @media only screen and (max-width:836px) and (orientation: landscape)
+            left: 0 
+            width: 100%         
+        >li 
+            align-items: inherit
+            @extend .flex
+            flex-flow: column wrap 
+            justify-content: center 
+            &:not(.-active)
+                opacity: .1           
+            +transition(500ms)  
+            height: 95px
+            width: 120px    
+            +mq('1024px', max)
+                height: 60px
+                width: 75px
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)     
+                height: 120px
+                width: 120px   
+                +mq('836px', max)    
+                    height: 150px
+                    width: 150px    
+                @media only screen and (max-width:836px) and (orientation: landscape)
+                    height: 110px
+                    width: 110px
+            &.-active
+                background: url(assets/imgs/svg/selected-service.svg) center center / contain no-repeat transparent
+            >a 
+                span 
+                    display: none
+                svg,
+                img 
+                    height: 70px
+                    +mq('1024px', max)
+                        height: 40px
+                    @media only screen and (max-width:1024px) and (orientation: landscape),
+                    screen and (max-width:1023px)   
+                        height: 55px  
+                    +mq('836px', max) 
+                        height: 90px   
+                    @media only screen and (max-width:836px) and (orientation: landscape)
+                        height: 60px                   

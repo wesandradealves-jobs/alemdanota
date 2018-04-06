@@ -1,0 +1,114 @@
+.page
+    &-contact
+        .header
+            >.container
+                >.navigation
+                    >ul
+                        >li
+                            &:nth-child(4)
+                                color: $darkblue
+                                >img 
+                                    @-webkit-keyframes toTopContact
+                                        0% 
+                                            top: -500px
+                                            transform: scale(0) 
+                                        100% 
+                                            top: -90px
+                                            transform: scale(1.0)
+                                    @-moz-keyframes toTopContact
+                                        0% 
+                                            top: -500px
+                                            transform: scale(0) 
+                                        100% 
+                                            top: -90px
+                                            transform: scale(1.0)
+                                    @-ms-keyframes toTopContact
+                                        0% 
+                                            top: -500px
+                                            transform: scale(0) 
+                                        100% 
+                                            top: -90px
+                                            transform: scale(1.0)                                        
+                                    display: block
+                                    left: -240px
+                                    top: -90px
+                                    +animation('toTopContact', 1000ms)
+        .main
+            .container  
+                align-items: flex-start 
+                @extend .flex
+                flex-flow: row wrap 
+                +mq('836px', max) 
+                    flex-flow: column wrap
+                justify-content: center
+                margin-top: -60px
+                +mq('836px', max) 
+                    margin-top: 0
+                >div 
+                    flex: 1
+                    z-index: 1
+                    +mq('836px', max) 
+                        width: 100%
+                    &:first-child
+                        flex: 0 0 auto
+                        width: 620px
+                        +mq('1440px', max) 
+                            width: 470px 
+                        +mq('836px', max) 
+                            width: 100%
+                        z-index: 2
+                    &:last-child
+                        overflow: hidden
+                        padding-left: 90px
+                        +mq('1440px', max) 
+                            padding-left: 40px
+                        +mq('836px', max) 
+                            padding-left: 0
+            &-text
+                +mq('836px', max) 
+                    margin: 0 auto 60px
+                .contact-txt
+                    width: 100%
+                .element
+                    &.-contact
+                        +mq('836px', max) 
+                            display: none
+                        left: -85px
+                        top: 185px
+                        width: 1048px
+                        +mq('1440px', max) 
+                            top: 120px
+                            width: 830px
+                        @media only screen and (max-width:1024px) and (orientation: landscape),
+                        screen and (max-width:1023px)     
+                            left: -210px
+                            top: 85px
+                            width: 750px                        
+                width: 640px
+                +mq('1440px', max) 
+                    max-width: 400px
+                    width: 100%
+        .contact-info
+            color: white
+            display: block 
+            +mq('836px', max) 
+                display: none
+            font-family: 'Mosk Medium 500'
+            +rem('font-size', 22px)
+            +mq('1440px', max) 
+                +rem('font-size', 19px)
+            margin-top: 60px
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)       
+                +rem('font-size', 12px)       
+                margin-top: 20px      
+        .elements
+            +mq('836px', max) 
+                display: none
+            .element
+                &.-stage
+                    bottom: 0
+                    left: 0
+                    margin-left: 0
+                    z-index: 2
+                    width: 400px    

@@ -1,0 +1,164 @@
+body, html
+    +animation(opacity,2000ms)
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    background-color: $darkblue
+    font-family: 'Mosk Light 300'
+    button,input,textarea,select 
+        border: 0 
+        font-family: inherit
+        margin: 0 0 
+        padding: 0 0
+    * 
+        &::after,&::before 
+            -webkit-box-sizing: inherit
+            -moz-box-sizing: inherit
+            box-sizing: inherit
+        font-weight: normal 
+        -webkit-box-sizing: inherit
+        -moz-box-sizing: inherit
+        box-sizing: inherit
+        line-height: initial
+
+.main
+    background-repeat: no-repeat
+    @extend .flex
+    flex-flow: column wrap 
+    flex: 1
+    justify-content: center
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) 
+        min-height: calc(100vh - 109.1px)
+    padding-top: 35px
+    width: 100%
+    >.container
+        width: 100%
+        z-index: 4
+    +mq('836px', max)
+        padding-bottom: 60px
+        padding-top: 60px
+
+textarea,
+input
+    box-shadow: none
+    overflow: hidden
+    resize: none
+    &:invalid
+        color: $yellow
+        &[placeholder]
+            color: $yellow
+        &::-moz-placeholder
+            color: $yellow
+        &::-webkit-input-placeholder
+            color: $yellow
+        &:-ms-input-placeholder 
+            color: $yellow
+    &:focus
+        border: 0px
+        outline: 0px
+    &[placeholder]
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: 1920px
+    margin: 0 auto
+    padding-left: 60px
+    padding-right: 60px
+    +mq('836px', max)
+        padding-left: 30px
+        padding-right: 30px
+    +mq('414px', max)
+        padding-left: 50px
+        padding-right: 50px   
+    +mq('375px', max)
+        padding-left: 30px
+        padding-right: 30px        
+p 
+    b,strong 
+        font-weight: bold
+
+@for $i from 1 through 5
+    h#{$i}
+        font-weight: normal 
+    
+.logo
+    svg,
+    img 
+        height: 50.206px
+
+#wrap 
+    align-items: flex-start
+    @extend .flex
+    flex-flow: column wrap 
+    justify-content: flex-start 
+    min-height: 100vh
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) 
+        min-height: initial
+    overflow: hidden
+
+.btn
+    cursor: pointer
+    display: block 
+
+.tcon
+    width: 32px
+
+.elements
+    left: 0
+    min-height: 100vh
+    position: absolute
+    top: 0
+    width: 100% 
+    z-index: 1
+    
+.element
+    display: block 
+    position: absolute
+    &.-stage
+        bottom: 0
+        left: 50%
+        margin-left: calc(-1920px/2) 
+        +mq('1680px', max) 
+            margin-left: calc(-1680px/2)              
+        +mq('1440px', max)
+            margin-left: calc(-1366px/2)  
+        +mq('1024px', max) 
+            margin-left: calc(-1024px/2)  
+        +mq('1920px', min) 
+            +animation(1000ms, stage)                   
+        width: 1920px 
+        z-index: 3
+        +mq('1440px', max)
+            width: 1366px   
+        +mq('1024px', max) 
+            width: 1024px       
+        +animation('stage', 1000ms)             
+.page
+    &:not(.page-contact)
+        +animation(3000ms, morning) 

@@ -1,0 +1,378 @@
+.page
+    &-home
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)        
+            background-image: url(assets/imgs/home-mobile.png) 
+            background-position: center calc(100% + 80px)
+            background-size: 640px 
+            background-repeat: no-repeat 
+            background-color: $darkblue
+        +mq('414px', max)
+            background-size: 414px
+        +mq('375px', max)
+            background-size: 375px   
+        +mq('320px', max)  
+            background-size: 320px                  
+        .header
+            >.container
+                >.navigation
+                    >ul
+                        >li
+                            &:first-child
+                                color: $darkblue
+                                @-webkit-keyframes toTopHome
+                                    0% 
+                                        top: -500px
+                                        transform: scale(0) 
+                                    100% 
+                                        top: -50px
+                                        transform: scale(1.0)
+                                @-moz-keyframes toTopHome
+                                    0% 
+                                        top: -500px
+                                        transform: scale(0) 
+                                    100% 
+                                        top: -50px
+                                        transform: scale(1.0)
+                                @-ms-keyframes toTopHome
+                                    0% 
+                                        top: -500px
+                                        transform: scale(0) 
+                                    100% 
+                                        top: -50px
+                                        transform: scale(1.0)                                 
+                                >img 
+                                    display: block
+                                    left: -120px      
+                                    top: -50px        
+                                    +animation('toTopHome', 1000ms)                      
+        .main-text
+            bottom: 375px
+            +mq('1680px', max)
+                bottom: 300px
+            +mq('1366px', max) 
+                bottom: 225px
+            +mq('1024px', max) 
+                bottom: 280px
+            +mq('320px', max)  
+                bottom: 150px
+            margin-left: calc(-915px/2)
+            +mq('1920px', max) 
+                margin-left: calc(-1170px/2)
+            +mq('1680px', max)
+                margin-left: calc(-1080px/2)
+            +mq('1440px', max) 
+                margin-left: calc(-1000px/2)
+            +mq('1366px', max) 
+                margin-left: calc(-950px/2)
+            position: absolute 
+            left: 50%
+            width: 380px
+            z-index: 4     
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)
+                bottom: 265px
+                left: -115px
+                margin: 0 auto                
+                position: relative 
+            +mq('836px', max)
+                bottom: 190px
+                left: -122px
+            +mq('736px', max)
+                bottom: 60px
+                left: 35px
+            +mq('320px', max)  
+                bottom: 45px
+                left: 30px
+            .element
+                &.-home-txt
+                    height: 298px
+                    +mq('836px', max)
+                        height: 300px
+                    +mq('736px', max)
+                        height: 145px
+                    +mq('320px', max)  
+                        height: 125px
+                    position: relative
+                &.-airplane
+                    height: 80px
+                    left: -390px
+                    @-webkit-keyframes airplane
+                        0% 
+                            left: 100vw
+                        100% 
+                            left: -390px
+                    @-moz-keyframes airplane
+                        0% 
+                            left: 100vw
+                        100% 
+                            left: -390px
+                    @-ms-keyframes airplane
+                        0% 
+                            left: 100vw
+                        100% 
+                            left: -390px                            
+                    +mq('1680px', max)
+                        left: calc(-50% - 130px)
+                        @-webkit-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 130px)
+                        @-moz-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 130px)
+                        @-ms-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 130px)                          
+                    +mq('1600px', max)
+                        left: calc(-50% - 90px)
+                        @-webkit-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 90px)
+                        @-moz-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 90px)
+                        @-ms-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 90px)                          
+                    +mq('1440px', max)
+                        left: calc(-50% - 50px)
+                        @-webkit-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 50px)
+                        @-moz-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 50px)
+                        @-ms-keyframes airplane
+                            0% 
+                                left: 100vw
+                            100% 
+                                left: calc(-50% - 50px)                          
+                    margin-top: calc(-190px/2)   
+                    +animation(1000ms, airplane)                                                         
+                    top: 50%
+                    @media only screen and (max-width:1024px) and (orientation: landscape),
+                    screen and (max-width:1023px)    
+                        display: none                
+        .elements
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)               
+                display: none
+            .element
+                &.-sun
+                    bottom: calc(335px + 90px)
+                    @-webkit-keyframes sun-home
+                        0% 
+                            bottom: calc(335px - 120px)
+                        100% 
+                            bottom: calc(335px + 90px)
+                    @-moz-keyframes sun-home
+                        0% 
+                            bottom: calc(335px - 120px)
+                        100% 
+                            bottom: calc(335px + 90px)
+                    @-ms-keyframes sun-home
+                        0% 
+                            bottom: calc(335px - 120px)
+                        100% 
+                            bottom: calc(335px + 90px)                        
+                    +mq('1680px', max)
+                        bottom: calc(335px + 20px)
+                        @-webkit-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: calc(335px + 20px)
+                        @-moz-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: calc(335px + 20px)
+                        @-ms-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: calc(335px + 20px)                           
+                    +mq('1366px', max) 
+                        bottom: calc(335px + -20px)
+                        @-webkit-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: calc(335px + -20px)
+                        @-moz-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: calc(335px + -20px)
+                        @-ms-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: calc(335px + -20px)                          
+                    +mq('1024px', max) 
+                        bottom: 280px
+                        @-webkit-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: 280px
+                        @-moz-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: 280px
+                        @-ms-keyframes sun-home
+                            0% 
+                                bottom: calc(335px - 120px)
+                            100% 
+                                bottom: 280px                           
+                    margin-left: calc(110px/2)
+                    left: 50%
+                    +animation(2000ms, sun-home) 
+                    width: 90px
+                    z-index: 1                    
+                &.-cloud
+                    bottom: calc(290px + 90px)                      
+                    +mq('1680px', max)
+                        bottom: calc(290px + 20px)
+                    +mq('1366px', max) 
+                        bottom: calc(290px + -20px)
+                    +mq('1024px', max) 
+                        bottom: 250px
+                    margin-left: calc(-160px/2)
+                    @-webkit-keyframes cloud-home
+                        0% 
+                            margin-left: calc(-250px/2)
+                        100% 
+                            margin-left: calc(-160px/2)
+                    @-moz-keyframes cloud-home
+                        0% 
+                            margin-left: calc(-250px/2)
+                        100% 
+                            margin-left: calc(-160px/2)
+                    @-ms-keyframes cloud-home
+                        0% 
+                            margin-left: calc(-250px/2)
+                        100% 
+                            margin-left: calc(-160px/2)                     
+                    left: 50%
+                    // +animation(2000ms, cloud-home) 
+                    animation: cloud-home 3000ms ease-out infinite alternate
+                    width: 90px
+                    z-index: 1                
+                &.-balloon
+                    bottom: calc(390px + 90px)
+                    @-webkit-keyframes balloonMovement
+                        0% 
+                            bottom: calc(390px + -60px)
+                        100% 
+                            bottom: calc(390px + 90px)
+                    @-moz-keyframes balloonMovement
+                        0% 
+                            bottom: calc(390px + -60px)
+                        100% 
+                            bottom: calc(390px + 90px)
+                    @-ms-keyframes balloonMovement
+                        0% 
+                            bottom: calc(390px + -60px)
+                        100% 
+                            bottom: calc(390px + 90px)                         
+                    +mq('1680px', max)
+                        bottom: calc(390px + 20px)
+                        @-webkit-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: calc(390px + 20px)
+                        @-moz-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: calc(390px + 20px)
+                        @-ms-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: calc(390px + 20px)                            
+                    +mq('1366px', max) 
+                        bottom: calc(390px + -20px)
+                        @-webkit-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: calc(390px + -20px)
+                        @-moz-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: calc(390px + -20px)
+                        @-ms-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: calc(390px + -20px)                                                     
+                    +mq('1024px', max) 
+                        bottom: 330px
+                        @-webkit-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: 330px
+                        @-moz-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: 330px
+                        @-ms-keyframes balloonMovement
+                            0% 
+                                bottom: calc(390px + -60px)
+                            100% 
+                                bottom: 330px                            
+                    margin-left: calc(-190px/2)
+                    left: 50%
+                    animation: balloonMovement 3000ms ease-out infinite alternate
+                    width: 190px
+                    +mq('1366px', max) 
+                        width: 130px
+                    z-index: 1
+                &.-home
+                    bottom: 0
+                    +mq('1024px', max) 
+                        bottom: 45px
+                    left: 50%
+                    margin-left: calc(-1920px/2) 
+                    +mq('1680px', max) 
+                        margin-left: calc(-1680px/2) 
+                    +mq('1366px', max) 
+                        margin-left: calc(-1366px/2)                         
+                    +mq('1024px', max) 
+                        margin-left: calc(-950px/2) 
+                    +animation(1000ms, opacity)                  
+                    z-index: 2
+                    width: 1920px
+                    +mq('1680px', max)
+                        width: 1680px 
+                    +mq('1366px', max) 
+                        width: 1366px                        
+                    +mq('1024px', max) 
+                        width: 1024px
+                &.-stage
+                    +mq('1680px', max)
+                        margin-left: calc(-1680px/2)  
+                        width: 1680px    
