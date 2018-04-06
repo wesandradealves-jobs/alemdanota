@@ -140,12 +140,37 @@
             left: 0 
             width: 100%         
         >li 
+            @-webkit-keyframes scaling
+                0% 
+                    transform: scale(.8)
+                50%
+                    transform: scale(1.1)
+                100% 
+                    transform: scale(1)
+            @-moz-keyframes scaling
+                0% 
+                    transform: scale(.8)
+                50%
+                    transform: scale(1.1)
+                100% 
+                    transform: scale(1)
+            @-ms-keyframes scaling
+                0% 
+                    transform: scale(.8)
+                50%
+                    transform: scale(1.1)
+                100% 
+                    transform: scale(1)    
+            &:hover
+                animation: scaling 1s ease-out alternate     
             align-items: inherit
             @extend .flex
             flex-flow: column wrap 
             justify-content: center 
-            &:not(.-active)
-                opacity: .1           
+            opacity: .1
+            &:hover,
+            &.-active
+                opacity: 1        
             +transition(500ms)  
             height: 95px
             width: 120px    
@@ -162,6 +187,7 @@
                 @media only screen and (max-width:836px) and (orientation: landscape)
                     height: 110px
                     width: 110px
+            &:hover,
             &.-active
                 background: url(assets/imgs/svg/selected-service.svg) center center / contain no-repeat transparent
             >a 

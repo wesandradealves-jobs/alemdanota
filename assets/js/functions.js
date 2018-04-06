@@ -5,7 +5,8 @@ function mobileNavigation(e){
     e.parent().toggleClass("-active");
 }
 function copyright() {
-    $(".main").append("<a class='copyright' target='_blank' title='Concebido por Innominatum Consultoria' href='http://innominatum.eu/'><img alt='Concebido por Innominatum Consultoria' src='assets/imgs/svg/copyright.svg' height='35'/></a>")
+    $(".main")
+    .append("<a class='copyright' target='_blank' title='Concebido por Innominatum Consultoria' href='http://innominatum.eu/'><img alt='Concebido por Innominatum Consultoria' src='assets/imgs/svg/copyright.svg' height='35'/> <span class='copyright-text'>Concebido por Innominatum Consultoria</span></a>")
 }
 function whatsapp(){
     var telefone = "5521973819591";
@@ -20,5 +21,7 @@ function whatsapp(){
 }
 
 jQuery(document).ready(function(){	
-    setInterval(copyright, 1000);
+    setTimeout( function(){ 
+    copyright()
+    }, 1000 );
 });	
