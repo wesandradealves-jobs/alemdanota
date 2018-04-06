@@ -70,16 +70,16 @@
           <div>
               <form class="contact-form" action="">
                 <span>
-                  <input type="text" placeholder="Nome">
+                  <input onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nome'" type="text" placeholder="Nome">
                 </span>
                 <span>
-                  <input type="email" placeholder="E-mail">
+                  <input onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" type="email" placeholder="E-mail">
                 </span>
                 <span>
-                  <textarea placeholder="Mensagem"></textarea>
+                  <textarea onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensagem'" placeholder="Mensagem"></textarea>
                 </span>
                 <span>
-                  <input type="submit" value="Enviar por E-mail" class="btn -yellow"> 
+                  <input type="submit" value="Enviar por Email" class="btn -yellow"> 
                   <input type="submit" value="Enviar por WhatsApp" class="btn -green">  
                 </span>
               </form>

@@ -33,6 +33,15 @@
             z-index: 1
             +mq('320px', max)   
                 width: 100%
+            &.hovering
+                display: none 
+        &:hover
+            img,svg 
+                &:not(.hovering)
+                    display: none
+                &.hovering
+                    display: block
+            
     &-caption
         align-items: center
         color: white
