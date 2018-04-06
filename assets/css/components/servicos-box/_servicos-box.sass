@@ -46,10 +46,7 @@
     &-caption
         align-items: center
         color: white
-        @media only screen and (max-width:1024px) and (orientation: landscape),
-        screen and (max-width:1023px)
-            display: none        
-        @extend .flex
+        display: none     
         font-family: 'Mosk Ultra-Bold 900'
         +rem('font-size', 12px)
         justify-content: center
@@ -59,9 +56,7 @@
         padding: 5px
         position: absolute 
         right: -130px
-        top: 20px
-        +mq('1024px', max)
-            top: -20px
+        top: 0
         text-align: center
         width: 120px
         +mq('1024px', max)
@@ -162,7 +157,9 @@
                 100% 
                     transform: scale(1)    
             &:hover
-                animation: scaling 1s ease-out alternate     
+                animation: scaling 1s ease-out alternate   
+                [class*="caption"]
+                    @extend .flex  
             align-items: inherit
             @extend .flex
             flex-flow: column wrap 
