@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 326 138" style="enable-background:new 0 0 326 138;" xml:space="preserve">
+	 viewBox="0 0 350.9 134" style="enable-background:new 0 0 350.9 134;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#DA911F;}
 	.st1{fill:none;stroke:#FFFFFF;stroke-width:17;stroke-miterlimit:10;}
 </style>
-<polygon class="st0" points="31,50.4 73.6,91.3 271.8,91.3 229.2,50.4 271.8,11 73.6,11 "/>
+<title>airplane</title>
+<polygon class="st0" points="59,43.4 101.6,84.3 299.8,84.3 257.2,43.4 299.8,4 101.6,4 "/>
 <g>
-	<polyline class="st1" points="12,48.6 112.9,48.6 133.7,23.2 144.4,23.2 141.3,67.9 119,78.5 16,78.5 	"/>
-	<polyline class="st1" points="11,83.6 61.2,131.2 80.5,131.2 71.3,77 	"/>
-	<line class="st1" x1="174.9" y1="65.4" x2="207.6" y2="65.4"/>
-	<line class="st1" x1="229.8" y1="65.4" x2="262.5" y2="65.4"/>
-	<line class="st1" x1="284.3" y1="65.4" x2="317" y2="65.4"/>
+	<path class="st1" d="M40,41.6h100.9l20.8-25.4h10.6l-3,44.6L147,71.5H44H14.5C14.5,71.5,7.5,41.6,40,41.6z"/>
+	<polyline class="st1" points="36.5,70.5 89.2,124.2 108.5,124.2 99.3,70 	"/>
+	<line class="st1" x1="202.9" y1="58.4" x2="235.6" y2="58.4"/>
+	<line class="st1" x1="257.8" y1="58.4" x2="290.5" y2="58.4"/>
+	<line class="st1" x1="312.3" y1="58.4" x2="345" y2="58.4"/>
 </g>
 </svg>
