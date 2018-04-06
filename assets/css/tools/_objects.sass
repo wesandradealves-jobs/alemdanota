@@ -162,3 +162,20 @@ p
 .page
     &:not(.page-contact)
         +animation(3000ms, morning) 
+
+.copyright
+    align-items: center
+    background-color: $yellow
+    bottom: 0
+    @extend .flex
+    flex-flow: column wrap 
+    justify-content: center 
+    margin: 25px
+    height: 60px
+    position: fixed
+    right: 0
+    text-align: center  
+    width: 60px
+    z-index: 10
+    +mq('836px', max)
+        display: none

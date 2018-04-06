@@ -49,14 +49,14 @@
             });          
 
             $(".servicos-box-navigation").append(caption);
-            $(".servicos-box-caption").find("p").html($(".servicos-box-navigation").find(".-active a").find("span").html());
+            $(".servicos-box-caption").hide().find("p").html($(".servicos-box-navigation").find(".-active a").find("span").html());
             
             $(".servicos-box-navigation").children().find("a").hover(function() {
                 var content = $(this).find("span").html();
-                $(".servicos-box-caption").find("p").html(content);
+                $(".servicos-box-caption").show().find("p").html(content);
             }, function() {
                 var content = $(".servicos-box-navigation").find(".-active a").find("span").html();
-                $(".servicos-box-caption").find("p").html(content);
+                $(".servicos-box-caption").hide().find("p").html(content);
             });
             
             $(window).resize(function() {
