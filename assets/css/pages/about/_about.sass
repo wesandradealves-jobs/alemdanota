@@ -142,7 +142,7 @@
                 +mq('1024px', max) 
                     display: none
                 right: 50%
-                animation: cloud-about 3000ms ease-out infinite alternate
+                animation: cloud-about 3000ms linear infinite alternate
                 width: 120px
                 z-index: 4                  
             &.-sun
@@ -210,9 +210,17 @@
                 width: 250px
                 z-index: 1    
             &.-stage
+                margin-left: calc(-2640px/2) 
+                width: 2440px
                 +mq('1680px', max)
                     margin-left: calc(-1680px/2)  
-                    width: 1680px  
+                    width: 1680px                
+                +mq('1440px', max)
+                    margin-left: calc(-1440px/2)  
+                    width: 1440px
+                +mq('1024px', max) 
+                    margin-left: calc(-1024px/2)     
+                    width: 1024px             
                 +mq('836px', max) 
                     display: none                                                                               
             &.-about

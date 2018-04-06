@@ -143,19 +143,15 @@ p
     &.-stage
         bottom: 0
         left: 50%
-        margin-left: calc(-1920px/2) 
-        +mq('1680px', max) 
-            margin-left: calc(-1680px/2)              
+        margin-left: calc(-2440px/2) 
         +mq('1440px', max)
-            margin-left: calc(-1366px/2)  
+            margin-left: calc(-1680px/2)  
         +mq('1024px', max) 
             margin-left: calc(-1024px/2)  
-        +mq('1920px', min) 
-            +animation(1000ms, stage)                   
-        width: 1920px 
+        width: 2440px 
         z-index: 3
         +mq('1440px', max)
-            width: 1366px   
+            width: 1680px   
         +mq('1024px', max) 
             width: 1024px       
         +animation('stage', 1000ms)             
