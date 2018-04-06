@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.85 128.75"><defs><style>.cls-1{fill:#da911f;}.cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:17px;}</style></defs><title>airplane</title><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><polygon class="cls-1" points="25.84 39.45 68.46 80.27 266.66 80.27 224.04 39.45 266.66 0 68.46 0 25.84 39.45"/><polyline class="cls-2" points="6.85 37.59 107.79 37.59 128.58 12.23 139.23 12.23 136.19 56.86 113.87 67.51 10.85 67.51"/><polyline class="cls-2" points="5.85 72.58 56.06 120.25 75.33 120.25 66.2 65.99"/><line class="cls-2" x1="169.76" y1="54.39" x2="202.46" y2="54.39"/><line class="cls-2" x1="224.63" y1="54.39" x2="257.34" y2="54.39"/><line class="cls-2" x1="279.14" y1="54.39" x2="311.85" y2="54.39"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 326 138" style="enable-background:new 0 0 326 138;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#DA911F;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:17;stroke-miterlimit:10;}
+</style>
+<polygon class="st0" points="31,50.4 73.6,91.3 271.8,91.3 229.2,50.4 271.8,11 73.6,11 "/>
+<g>
+	<polyline class="st1" points="12,48.6 112.9,48.6 133.7,23.2 144.4,23.2 141.3,67.9 119,78.5 16,78.5 	"/>
+	<polyline class="st1" points="11,83.6 61.2,131.2 80.5,131.2 71.3,77 	"/>
+	<line class="st1" x1="174.9" y1="65.4" x2="207.6" y2="65.4"/>
+	<line class="st1" x1="229.8" y1="65.4" x2="262.5" y2="65.4"/>
+	<line class="st1" x1="284.3" y1="65.4" x2="317" y2="65.4"/>
+</g>
+</svg>

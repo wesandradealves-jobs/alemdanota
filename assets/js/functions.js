@@ -16,7 +16,7 @@ function whatsapp(){
     var saudacaoencode = encodeURI(saudacao);		
     var url_base = "https://api.whatsapp.com/send?phone=" + telefone + "&text=" + saudacaoencode + "%20" + encodeURI(name) + "%20e%20" + encodeURI(msg);
 
-    whatsappbutton.setAttribute("formaction", url_base);		
+    whatsappbutton.setAttribute("formaction", url_base);	
 }
 
 jQuery(document).ready(function(){	

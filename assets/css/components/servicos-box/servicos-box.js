@@ -22,7 +22,7 @@
                     count+=1;
                     titles.push($("[box-navigation] > *").eq(i).find(".title").text()); 
                     content.push($("[box-navigation] > *").eq(i).find(".title").html()); 
-                    elementTemplate = "<li "+((i==0) ? 'class="-active"' : '')+">" + "<a class='ico-"+count+"' href='javascript:void(0)' title='"+titles[i]+"'><img src='assets/imgs/svg/ico-"+count+".svg'/><span>"+content[i]+"</span></a>" + '</li>'; 
+                    elementTemplate = "<li "+((i==0) ? 'class="-active"' : '')+">" + "<a class='ico-"+count+"' href='javascript:void(0)'><img src='assets/imgs/svg/ico-"+count+".svg'/><span>"+content[i]+"</span></a>" + '</li>'; 
                     $(".servicos-box-navigation").append(elementTemplate); 
                 }                
             }
