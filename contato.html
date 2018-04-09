@@ -19,14 +19,14 @@
     <link rel="shortcut icon" type="image/png" href="https://www.alemdanota.com.br/favico.ico">
     <link rel="stylesheet" href="style.css" type="text/css" media="all">
   </head>
-  <body class="page page-about">
+  <body class="page page-contact">
     <div id="wrap">
       <nav class="navigation -mobile">
         <ul>
             <li><a href="index.html" title="Home">Home</a></li>
-            <li><a href="about.html" title="Sobre Nós">Sobre Nós</a></li>
-            <li><a href="services.html" title="Serviços">Serviços</a></li>
-            <li><a href="contact.html" title="Contato">Contato</a></li>
+            <li><a href="sobre.html" title="Sobre Nós">Sobre Nós</a></li>
+            <li><a href="servicos.html" title="Serviços">Serviços</a></li>
+            <li><a href="contato.html" title="Contato">Contato</a></li>
             <li><a href="#" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
         </ul>
       </nav>
@@ -40,51 +40,54 @@
           <nav class="navigation">
             <ul>
               <li><a href="index.html" title="Home">Home</a> <img src="assets/imgs/svg/triangle-1.svg" alt="Home"/></li>
-              <li><a href="about.html" title="Sobre Nós">Sobre Nós</a> <img src="assets/imgs/svg/triangle-2.svg" alt="Sobre Nós"/></li>
-              <li><a href="services.html" title="Serviços">Serviços</a> <img src="assets/imgs/svg/triangle-3.svg" alt="Serviços"/></li>
-              <li><a href="contact.html" title="Contato">Contato</a> <img src="assets/imgs/svg/triangle-4.svg" alt="Contato"/></li>
+              <li><a href="sobre.html" title="Sobre Nós">Sobre Nós</a> <img src="assets/imgs/svg/triangle-2.svg" alt="Sobre Nós"/></li>
+              <li><a href="servicos.html" title="Serviços">Serviços</a> <img src="assets/imgs/svg/triangle-3.svg" alt="Serviços"/></li>
+              <li><a href="contato.html" title="Contato">Contato</a> <img src="assets/imgs/svg/triangle-4.svg" alt="Contato"/></li>
               <li><a href="#" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
               <li>
                   <button onclick="mobileNavigation(this)" type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu">
                       <span class="tcon-menu__lines" aria-hidden="true"></span>
                       <span class="tcon-visuallyhidden">toggle menu</span>
-                  </button>                
+                  </button> 
+                  <img src="assets/imgs/svg/menu.svg" class="mobile-detail"/>               
               </li>               
             </ul>
           </nav>
         </div>
       </header>
       <main class="main">
-        <img class="element -about-txt" src="assets/imgs/svg/about-txt.svg" alt="Sobre Nós">
-        <img class="element -about-txt -mobile" src="assets/imgs/about-txt-m.png" alt="Sobre Nós">
-        <div class="about-box">
-          <div class="about-box-content">
-            <p>
-                O Além da Nota é formado por um grupo de pessoas comuns, sonhadoras, assim como você. Sonho pode parecer algo longe do nosso alcance, mas sabendo exatamente o que queremos, conseguimos transformar esse sonho em uma meta, e essa meta em uma realidade, que hoje é o Além da Nota.
-                <br/><br/>
-                Nosso sonho sempre foi forjar um futuro melhor para o nosso país, e que melhor forma de fazer isso que colaborando para a uma educação mais satisfatória? 
-                <br/><br/>
-                No Além da Nota, o objetivo é simples e está explicitado já no nosso nome: ir além do simples, além de uma nota no boletim, mostrar que o seu filho é muito mais do que um número, e que consegue SIM aprender de fato todos os conteúdos ministrados.
-                <br/><br/>
-                Nós somos pessoas como você, que querem ver os jovens de hoje como adultos pensantes e bem-sucedidos amanhã e tornando o nosso país um lugar melhor para se viver. Por isso estamos nesse projeto, oferecendo esse serviço inovador, que vai muito além das notas dez que proporcionamos, focando sempre na verdadeira compreensão do seu filho. Queremos que ele se torne uma pessoa melhor, desenvolvida e, principalmente, preparada para o mundo real.
-            </p>
+        <div class="container">
+          <div>
+            <h2 class="main-text">
+              <img class="contact-txt" src="assets/imgs/svg/contact-txt.svg" alt="Contact">
+              <img class="element -contact" src="assets/imgs/svg/contact.svg" alt="Contact">
+              <p class="contact-info">
+                  <a title="facebook.com/alemdanota" href="http://facebook.com/alemdanota">facebook.com/alemdanota</a><br/>
+                  <a href="mailto:contato@alemdanota.com.br" title="contato@alemdanota.com.br">contato@alemdanota.com.br</a><br/>
+                  (21) 97381-9591
+              </p>
+            </h2>
           </div>
-          <ul class="about-box-pagination">
-            <li class="-active"><!----></li>
-            <li><!----></li>
-            <li><!----></li>
-            <li><!----></li>
-          </ul>
-          <div class="about-box-navigation">
-            <button onclick="textScrolling(this)" class="text-up _disabled"></button>
-            <button onclick="textScrolling(this)" class="text-down"></button>
+          <div>
+              <form class="contact-form" action="inc/send_mail.php" method="POST">
+                <span>
+                  <input id="user_nome" name="user_nome" maxlength="40" minlength="3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nome'" type="text" placeholder="Nome">
+                </span>
+                <span>
+                  <input id="user_email" name="user_email" maxlength="50" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" type="email" placeholder="E-mail">
+                </span>
+                <span>
+                  <textarea id="user_msg" minlength="10" maxlength="2000" name="user_msg" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensagem'" placeholder="Mensagem"></textarea>
+                </span>
+                <span>
+                  <input type="submit" value="Enviar por Email" class="btn -yellow"> 
+                  <input id="whatsapp" onclick="whatsapp();" type="submit" value="Enviar por WhatsApp" class="btn -green">  
+                </span>
+              </form>
           </div>
-        </div> 
+        </div>
         <div class="elements">
-          <img class="element -cloud" src="assets/imgs/svg/cloud.svg" alt="Além da Nota!" />
-          <img class="element -sun" src="assets/imgs/svg/sun.svg" alt="Além da Nota!" />
-          <img class="element -about" src="assets/imgs/svg/about.svg" alt="Além da Nota!" />
-          <img class="element -stage" src="assets/imgs/svg/about-stage.svg" alt="Além da Nota!" />
+          <img class="element -stage" src="assets/imgs/svg/contact-stage.svg" alt="Além da Nota!" />
         </div>
       </main>
     </div>

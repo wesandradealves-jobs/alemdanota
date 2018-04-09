@@ -16,6 +16,11 @@ if(l>0){
         $(".book-pagination").append("<li></li>");
     }
 }
+if($(window).width() > 414){
+    setTimeout(function(){
+        $(".book-page:nth-child(1)").addClass("-animated");
+    }, 900);
+}
 function bookPageSwitch(e){
     var e = $(e);
 
@@ -40,13 +45,13 @@ function bookPageSwitch(e){
 
             if(e.index()){
                 k+=2;
-                $(".book-pagination > li:nth-child("+k+")").addClass('-active'),
+                $(".book-pagination > li:nth-child("+(k+2)+")").addClass('-active'),
                 $(".book-pagination > li:nth-child("+(k+1)+")").addClass('-active')
             } else {
                 k-=2;
-                var pg = k+2;   
-                $(".book-pagination > li:nth-child("+(k+3)+")").removeClass('-active'),
-                $(".book-pagination > li:nth-child("+(k+2)+")").removeClass('-active')              
+                console.log(k)
+                $(".book-pagination > li:nth-child("+(k+4)+")").removeClass('-active'),
+                $(".book-pagination > li:nth-child("+(k+3)+")").removeClass('-active')              
             }
         } else {
             (x >= 1) ? $(".book-navigation").children().eq(0).removeClass("_disabled") : (x <= 1) ? $(".book-navigation").children().eq(0).addClass("_disabled") : '';
@@ -76,7 +81,7 @@ $(document).ready(function () {
                     $(".book-page:nth-child("+x+")").addClass("-flip").addClass("-flip").css("transform-origin", "0 center");
 
                     k+=2;
-                    $(".book-pagination > li:nth-child("+k+")").addClass('-active'),
+                    $(".book-pagination > li:nth-child("+(k+2)+")").addClass('-active'),
                     $(".book-pagination > li:nth-child("+(k+1)+")").addClass('-active')
                 } else {
                     (x < l-1) ? x++ : '';
@@ -94,9 +99,8 @@ $(document).ready(function () {
                     $(".book-page:nth-child("+(x+2)+")").removeClass("-flip").css("transform-origin", "right center");
 
                     k-=2;
-                    var pg = k+2;   
-                    $(".book-pagination > li:nth-child("+(k+3)+")").removeClass('-active'),
-                    $(".book-pagination > li:nth-child("+(k+2)+")").removeClass('-active')                     
+                    $(".book-pagination > li:nth-child("+(k+4)+")").removeClass('-active'),
+                    $(".book-pagination > li:nth-child("+(k+3)+")").removeClass('-active')                     
                 } else {
                     (x >= 1) ? x-- : '';
                     $(".book-pagination").children().eq(x+1).removeClass('-active'),
