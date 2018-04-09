@@ -8,7 +8,7 @@ var i = 0,
     total = c.outerHeight();
 
 for(i = 0; i <= l; i++) { 
-    $(".book-page").eq(i).find("p").prepend("<span class='book-page-marker'>Pag. "+(i+1)+"</span>");
+    $(".book-page").eq(i).find("p").prepend("<span class='book-page-marker'>Pag. "+i+"</span>");
 }
 if(l>0){
     $(".book").append("<ul class='book-pagination'></ul>");
@@ -22,16 +22,16 @@ function bookPageSwitch(e){
         if($(window).width() <= 414){
             (e.index()) ? (x < l) ? x++ : '' : (x > 0) ? x-- : '';
             if(e.index() == 1){
-                $(".book-page:nth-child("+(x+1)+")").show().addClass("-flip"),
-                $(".book-page:nth-child("+(x+1)+")").prevAll().removeClass("-flip").hide()
+                $(".book-page:nth-child("+(x+1)+")").show().addClass("-flip").css("transform-origin", "0 center"),
+                $(".book-page:nth-child("+(x+1)+")").prevAll().removeClass("-flip").css("transform-origin", "right center").hide()
             } else{
-                $(".book-page:nth-child("+(x+2)+")").hide().removeClass("-flip"),
-                $(".book-page:nth-child("+(x+1)+")").show().addClass("-flip")
+                $(".book-page:nth-child("+(x+2)+")").hide().removeClass("-flip").css("transform-origin", "right center"),
+                $(".book-page:nth-child("+(x+1)+")").show().addClass("-flip").css("transform-origin", "0 center")
             }
         } else {            
             (e.index()) ? (x < l-2) ? x+= 2 : '' : (x >= 2) ? x -= 2 : '';
             
-            (e.index()) ? $(".book-page:nth-child("+x+")").addClass("-flip") : $(".book-page:nth-child("+(x+2)+")").removeClass("-flip");
+            (e.index()) ? $(".book-page:nth-child("+x+")").addClass("-flip").css("transform-origin", "0 center") : $(".book-page:nth-child("+(x+2)+")").removeClass("-flip").css("transform-origin", "right center");
         }
 
         if($(window).width() > 414){
@@ -40,14 +40,13 @@ function bookPageSwitch(e){
 
             if(e.index()){
                 k+=2;
-                var pg = k+2;
-                $(".book-pagination").children().eq(pg-1).addClass('-active'),
-                $(".book-pagination").children().eq(pg-2).addClass('-active')
+                $(".book-pagination > li:nth-child("+k+")").addClass('-active'),
+                $(".book-pagination > li:nth-child("+(k+1)+")").addClass('-active')
             } else {
                 k-=2;
-                var pg = k+2;     
-                $(".book-pagination").children().eq(pg).removeClass('-active'),
-                $(".book-pagination").children().eq(pg).next().removeClass('-active')                   
+                var pg = k+2;   
+                $(".book-pagination > li:nth-child("+(k+3)+")").removeClass('-active'),
+                $(".book-pagination > li:nth-child("+(k+2)+")").removeClass('-active')              
             }
         } else {
             (x >= 1) ? $(".book-navigation").children().eq(0).removeClass("_disabled") : (x <= 1) ? $(".book-navigation").children().eq(0).addClass("_disabled") : '';
@@ -74,12 +73,11 @@ $(document).ready(function () {
                     (x < l-2) ? x+= 2 : "";
                     (x >= 2) ? $(".book-navigation").children().eq(0).removeClass("_disabled") : '';
                     (x >= l-2) ? $(".book-navigation").children().eq(1).addClass("_disabled") : '';
-                    $(".book-page:nth-child("+x+")").addClass("-flip");
+                    $(".book-page:nth-child("+x+")").addClass("-flip").addClass("-flip").css("transform-origin", "0 center");
 
                     k+=2;
-                    var pg = k+2;
-                    $(".book-pagination").children().eq(pg-1).addClass('-active'),
-                    $(".book-pagination").children().eq(pg-2).addClass('-active')                
+                    $(".book-pagination > li:nth-child("+k+")").addClass('-active'),
+                    $(".book-pagination > li:nth-child("+(k+1)+")").addClass('-active')
                 } else {
                     (x < l-1) ? x++ : '';
                     $(".book-pagination").children().eq(x).addClass('-active'),
@@ -93,12 +91,12 @@ $(document).ready(function () {
                     (x >= 2) ? x -= 2 : "";
                     (x < 2) ? $(".book-navigation").children().eq(0).addClass("_disabled") : '';
                     (x < l-2) ? $(".book-navigation").children().eq(1).removeClass("_disabled") : '';
-                    $(".book-page:nth-child("+(x+2)+")").removeClass("-flip");
+                    $(".book-page:nth-child("+(x+2)+")").removeClass("-flip").css("transform-origin", "right center");
 
                     k-=2;
-                    var pg = k+2;     
-                    $(".book-pagination").children().eq(pg).removeClass('-active'),
-                    $(".book-pagination").children().eq(pg).next().removeClass('-active')                   
+                    var pg = k+2;   
+                    $(".book-pagination > li:nth-child("+(k+3)+")").removeClass('-active'),
+                    $(".book-pagination > li:nth-child("+(k+2)+")").removeClass('-active')                     
                 } else {
                     (x >= 1) ? x-- : '';
                     $(".book-pagination").children().eq(x+1).removeClass('-active'),

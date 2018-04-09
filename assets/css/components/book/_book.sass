@@ -83,14 +83,8 @@
                 +mq('960px', max)
                     margin-bottom: 0
             &:nth-child(1),
-            &:nth-child(2),
             &.-active
                 background-color: $yellow!important
-            +mq('414px', max)
-                &:nth-child(2)
-                    background-color: $darkblue!important
-                    &.-active
-                        background-color: $yellow!important
     &-navigation
         align-items: center
         @extend .flex
@@ -225,3 +219,48 @@
                 right: -10px
                 +mq('414px', max)
                     right: 0
+            // &:nth-child(2n+1):first-child
+            //     @-webkit-keyframes paging
+            //         0%
+            //             transform: rotateY(0deg)
+            //             transform-style: preserve-3d   
+            //             transform-origin: right center                        
+            //             z-index: 1000!important
+            //         100%
+            //             transform: rotateY(180deg)
+            //             transform-style: preserve-3d   
+            //             transform-origin: right center                        
+            //             z-index: 998!important                        
+            //     @-moz-keyframes paging
+            //         0%
+            //             transform: rotateY(0deg)
+            //             transform-style: preserve-3d   
+            //             transform-origin: right center                        
+            //             z-index: 1000!important
+            //         100%
+            //             transform: rotateY(180deg)
+            //             transform-style: preserve-3d   
+            //             transform-origin: right center                        
+            //             z-index: 998!important  
+            //     @-ms-keyframes paging
+            //         0%
+            //             transform: rotateY(0deg)
+            //             transform-style: preserve-3d   
+            //             transform-origin: right center                        
+            //             z-index: 1000!important
+            //         100%
+            //             transform: rotateY(180deg)
+            //             transform-style: preserve-3d   
+            //             transform-origin: right center                        
+            //             z-index: 998!important  
+            //     +animation('paging', 1000ms)
+            //     left: 0!important
+            //     transform: rotateY(180deg)
+            //     transform-style: preserve-3d   
+            //     transform-origin: right center              
+            //     z-index: 998!important                 
+            //     .book-page-content
+            //         padding: 0
+            //         &::after,
+            //         &::before
+            //             display: none                    
