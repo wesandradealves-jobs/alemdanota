@@ -87,6 +87,8 @@
             .element
                 &.-home-txt
                     height: 298px
+                    +mq('1280px', max)
+                        height: 260px
                     +mq('836px', max)
                         height: 300px
                     +mq('736px', max)
@@ -258,17 +260,17 @@
                     margin-left: calc(-160px/2)
                     @-webkit-keyframes cloud-home
                         0% 
-                            margin-left: calc(-250px/2)
+                            margin-left: calc(-190px/2)
                         100% 
                             margin-left: calc(-160px/2)
                     @-moz-keyframes cloud-home
                         0% 
-                            margin-left: calc(-250px/2)
+                            margin-left: calc(-190px/2)
                         100% 
                             margin-left: calc(-160px/2)
                     @-ms-keyframes cloud-home
                         0% 
-                            margin-left: calc(-250px/2)
+                            margin-left: calc(-190px/2)
                         100% 
                             margin-left: calc(-160px/2)                     
                     left: 50%
@@ -280,17 +282,17 @@
                     bottom: calc(390px + 90px)
                     @-webkit-keyframes balloonMovement
                         0% 
-                            bottom: calc(390px + -60px)
+                            bottom: calc(390px + 110px)
                         100% 
                             bottom: calc(390px + 90px)
                     @-moz-keyframes balloonMovement
                         0% 
-                            bottom: calc(390px + -60px)
+                            bottom: calc(390px + 110px)
                         100% 
                             bottom: calc(390px + 90px)
                     @-ms-keyframes balloonMovement
                         0% 
-                            bottom: calc(390px + -60px)
+                            bottom: calc(390px + 110px)
                         100% 
                             bottom: calc(390px + 90px)                         
                     +mq('1680px', max)

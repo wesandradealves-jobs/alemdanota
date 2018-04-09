@@ -1,0 +1,20 @@
+.landpage
+    background-color: white
+    +mq('960px', max)
+        .copyright
+            display: none
+    .main
+        align-items: flex-start 
+        justify-content: flex-start
+        padding-top: 15px
+        padding-bottom: 0
+        padding-left: 15px
+        padding-right: 15px
+    .header
+        >.container
+            max-width: 768px
+            padding-left: 0
+            padding-right: 0
+            +mq('768px', max)
+                padding-left: 10px
+                padding-right: 10px
