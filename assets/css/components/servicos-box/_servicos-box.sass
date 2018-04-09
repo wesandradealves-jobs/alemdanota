@@ -57,7 +57,7 @@
             height: 70px
         padding: 5px
         position: absolute 
-        right: -130px
+        right: -137px
         top: 0
         text-align: center
         width: 120px
@@ -170,9 +170,12 @@
             flex-flow: column wrap 
             justify-content: center 
             opacity: .1
+            z-index: 1
             &:hover,
             &.-active
-                opacity: 1        
+                opacity: 1   
+            &:hover
+                z-index: 10     
             +transition(500ms)  
             height: 95px
             width: 120px    
