@@ -1,18 +1,12 @@
 .page
     &-home
-        @media only screen and (max-width:1024px) and (orientation: landscape),
-        screen and (max-width:1023px)        
-            background-image: url(assets/imgs/home-mobile.png) 
-            background-position: center calc(100% + 80px)
-            background-size: 640px 
+        @media only screen and (max-width:1024px) and (orientation: portrait),
+        screen and (max-width:1023px) and (orientation: portrait)        
+            background-image: url(assets/imgs/svg/home-mobile.svg), url(assets/imgs/svg/home-mobile-stage.svg) 
+            background-position: center calc(100% - 30vw), center bottom
+            background-size: 100% 
             background-repeat: no-repeat 
-            background-color: $darkblue
-        +mq('414px', max)
-            background-size: 414px
-        +mq('375px', max)
-            background-size: 375px   
-        +mq('320px', max)  
-            background-size: 320px                  
+            background-color: $darkblue    
         .header
             >.container
                 >.navigation
@@ -52,10 +46,6 @@
                 bottom: 300px
             +mq('1366px', max) 
                 bottom: 225px
-            +mq('1024px', max) 
-                bottom: 280px
-            +mq('320px', max)  
-                bottom: 150px
             margin-left: calc(-915px/2)
             +mq('1920px', max) 
                 margin-left: calc(-1170px/2)
@@ -69,32 +59,14 @@
             left: 50%
             width: 380px
             z-index: 4     
-            @media only screen and (max-width:1024px) and (orientation: landscape),
-            screen and (max-width:1023px)
-                bottom: 265px
-                left: -115px
-                margin: 0 auto                
-                position: relative 
-            +mq('836px', max)
-                bottom: 190px
-                left: -122px
-            +mq('736px', max)
-                bottom: 60px
-                left: 35px
-            +mq('320px', max)  
-                bottom: 45px
-                left: 30px
             .element
                 &.-home-txt
                     height: 298px
                     +mq('1280px', max)
                         height: 260px
-                    +mq('836px', max)
-                        height: 300px
-                    +mq('736px', max)
-                        height: 145px
-                    +mq('320px', max)  
-                        height: 125px
+                    @media only screen and (max-width:1024px) and (orientation: portrait),
+                    screen and (max-width:1023px)   
+                        display: none
                     position: relative
                 &.-airplane
                     height: 80px
@@ -168,11 +140,11 @@
                     margin-top: calc(-190px/2)   
                     +animation(3000ms, airplane)                                                         
                     top: 50%
-                    @media only screen and (max-width:1024px) and (orientation: landscape),
+                    @media only screen and (max-width:1024px) and (orientation: portrait),
                     screen and (max-width:1023px)    
                         display: none                
         .elements
-            @media only screen and (max-width:1024px) and (orientation: landscape),
+            @media only screen and (max-width:1024px) and (orientation: portrait),
             screen and (max-width:1023px)               
                 display: none
             .element
