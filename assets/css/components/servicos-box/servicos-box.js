@@ -68,7 +68,7 @@
         swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
             var e = $(this);
             if($(window).width() <= 414){
-                x++;
+                (direction == "right") ? x-- : x++;
                 if($(".servicos-box-navigation").css("left") != "-460px"){
                     $(".servicos-box-navigation").css({"right" : "initial", "left" : 80-180*x});
                     $(".servicos-box-navigation").find(".-active").removeClass("-active");

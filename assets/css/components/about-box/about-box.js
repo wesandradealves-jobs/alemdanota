@@ -32,6 +32,32 @@ function textScrolling(e){
     }
 }
 
+// Swipe
+
+$("body").swipe( {
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        if(direction == "up"){
+            (i*40 > -total - -150) ? i-- : '';
+        } else {
+            (i < 0) ? i++ : '';
+        }
+        (i*40 > -total - -150) ? $(".text-down").removeClass("_disabled") : '';
+        (i >= 0 && !$(".text-up").is("._disabled")) ? $(".text-up").addClass("_disabled") : '';
+        (i*40 < -total - -150) ? $(".text-down").addClass("_disabled") : '';
+        (i < 0 && $(".text-up").is("._disabled")) ? $(".text-up").removeClass("_disabled") : '';
+
+        (i*40 > -total*0.99) ? $(".about-box-pagination li:nth-child(4)").removeClass("-active") : '';   
+        (i*40 > -total*0.67) ? $(".about-box-pagination li:nth-child(3)").removeClass("-active") : '';
+        (i*40 > -total*0.33) ? $(".about-box-pagination li:nth-child(2)").removeClass("-active") : '';  
+
+        (i*40 < -total*0.99 + 150) ? $(".about-box-pagination li:nth-child(4)").addClass("-active") : '';   
+        (i*40 < -total*0.66) ? $(".about-box-pagination li:nth-child(3)").addClass("-active") : '';
+        (i*40 < -total*0.33) ? $(".about-box-pagination li:nth-child(2)").addClass("-active") : '';   
+
+        $(this).find("p").css("top", i*40);        
+    }
+}); 
+
 // Mousewheel
 
 $(document).ready(function () {
