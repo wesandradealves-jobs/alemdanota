@@ -14,10 +14,6 @@
             >a 
                 position: relative
                 z-index: 2
-            &.-active
-                &:last-child
-                    &::after
-                        display: none
             &:last-child
                 display: none 
                 @media only screen and (max-width:1024px) and (orientation: landscape),
@@ -26,14 +22,17 @@
                 z-index: 999
                 >*
                     z-index: 2
-                &::after
+                &.-active
+                    .mobile-detail
+                        display: none                    
+                .mobile-detail
                     bottom: 0
-                    content: url(assets/imgs/menu.png)
                     display: block 
                     right: 0
                     margin: -10px
                     position: absolute 
-                    z-index: 1
+                    width: 45px                
+                    z-index: 1    
             &:not(:last-child):not(:nth-last-child(2))
                 margin-right: 80px
                 +mq('1440px', min) 
@@ -94,6 +93,13 @@
                     position: absolute 
                     width: 90px        
                     >a 
+                        &:last-child
+                            height: 20px
+                            position: relative
+                            display: inline-block
+                            vertical-align: middle
+                            img,svg 
+                                height: 100%                            
                         padding-left: 0
                         text-align: center
                 &::after
