@@ -41,8 +41,8 @@
         height: 475.5px
         width: 755.5px
     +mq('1366px', max) 
-        height: 435.5px
-        width: 695.5px    
+        height: 390.5px
+        width: 620.5px
     +mq('836px', max)
         width: 100%
     z-index: 4
@@ -65,6 +65,8 @@
                 background-color: $yellow
             &:not(:last-child)
                 margin-bottom: 25px
+                +mq('1366px', max) 
+                    margin-bottom: 15px
                 +mq('836px', max) 
                     margin-bottom: 0
             background-color: white 
@@ -109,9 +111,6 @@
             width: 60px
             +mq('836px', max) 
                 filter: grayscale(1) brightness(3)
-            &.-disabled
-                opacity: .3 
-                pointer-events: none 
             &.text-up
                 +mq('836px', max) 
                     transform: rotate(90deg)
