@@ -25,6 +25,7 @@
     +mq('960px', max)
         margin: 0 auto 80px
     max-width: calc(768px - 15px)
+    max-height: 598px
     position: relative
     padding: 30px
     +mq('414px', max)
@@ -35,9 +36,9 @@
         display: none 
         +mq('415px', min)
             display: block
-        height: 100%
+        height: calc(100% - 27px)
         position: absolute
-        top: 0
+        top: 13px
         width: 50%
         z-index: 1001
         right: 5px
@@ -189,13 +190,12 @@
             left: calc(50% - 5%/2)
             position: absolute 
             width: 5%
-            z-index: 1000
+            z-index: 1001
         .book-page
             height: 100%
             overflow: hidden
             position: absolute 
             top: 0
-            transform: rotate(0deg)
             +transition(.4s)
             flex: 0 0 auto 
             width: 50%
@@ -206,7 +206,7 @@
             &:nth-child(2)
                 z-index: 998!important
             &.-flip
-                transform: rotateY(90deg)
+                transform: rotateY(180deg)
                 transform-style: preserve-3d   
                 transform-origin: -10px center
                 +mq('414px', max)
@@ -268,7 +268,10 @@
                         +animation('paging-firstPage', .4s)  
                         z-index: 1001!important     
             &-content
-                background: url(assets/imgs/paperline.png) 0 0 repeat white
+                background: url(assets/imgs/paperline.png)
+                background-position: 0 0
+                background-repeat: repeat
+                background-color: white
                 display: block 
                 height: 100%
                 overflow: hidden
@@ -303,7 +306,7 @@
                 +mq('414px', max)
                     left: 0
             &:nth-child(2n+2)
-                right: -17px
+                right: -10px
                 +mq('414px', max)
                     right: 0
  
