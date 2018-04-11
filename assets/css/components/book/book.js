@@ -39,7 +39,8 @@ $( ".navigator" ).each(function() {
         (index) ? (page >= 1) ? $(".navigator").eq(0).removeClass("_disabled") : '' : (page < 1) ? $(".navigator").eq(0).addClass("_disabled") : '';
         if(index){
             if(page<pages){
-                $(".book-page").eq(page).addClass("-flip").css("z-index", page);
+                $(".book-page").parent().find(".-active").not($(".book-page").eq(page)).removeClass("-active");
+                $(".book-page").eq(page).addClass("-flip -active");
                 if($(window).width() > 414){
                     setTimeout(function(){ $(".book-page").eq(page).find("p").css("transform","rotateY(180deg)") }, 1200);
                 }
@@ -47,7 +48,8 @@ $( ".navigator" ).each(function() {
             }
         } else {
             if(page>=0){
-                $(".book-page").eq(page+1).removeClass("-flip").css("z-index", "-"+page);
+                $(".book-page").eq(page+1).removeClass("-flip -active");
+                $(".book-page").eq(page).not($(".book-page").eq(0)).addClass("-active");                
                 if($(window).width() > 414){
                     setTimeout(function(){ $(".book-page").eq(page+1).find("p").css("transform","rotateY(0deg)") }, 1200);
                 }
@@ -70,7 +72,8 @@ $(document).ready(function () {
                 (page >= pages-2) ? $(".navigator").eq(1).addClass("_disabled") : '';
                 (page >= 1) ? $(".navigator").eq(0).removeClass("_disabled") : '';
                 if(page<pages){
-                    $(".book-page").eq(page).addClass("-flip").css("z-index", page);
+                    $(".book-page").parent().find(".-active").not($(".book-page").eq(page)).removeClass("-active");
+                    $(".book-page").eq(page).addClass("-flip -active");
                     if($(window).width() > 414){
                         setTimeout(function(){ $(".book-page").eq(page).find("p").css("transform","rotateY(180deg)") }, 1200);
                     }
@@ -81,7 +84,8 @@ $(document).ready(function () {
                 (page < pages) ? $(".navigator").eq(1).removeClass("_disabled") : '';
                 (page < 1) ? $(".navigator").eq(0).addClass("_disabled") : '';
                 if(page>=0){
-                    $(".book-page").eq(page+1).removeClass("-flip").css("z-index", "-"+page);
+                    $(".book-page").eq(page+1).removeClass("-flip -active");
+                    $(".book-page").eq(page).not($(".book-page").eq(0)).addClass("-active");
                     if($(window).width() > 414){
                         setTimeout(function(){ $(".book-page").eq(page+1).find("p").css("transform","rotateY(0deg)") }, 1200);
                     }
