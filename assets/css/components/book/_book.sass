@@ -1,28 +1,49 @@
-@-webkit-keyframes auto-paging
-    0%
+@-webkit-keyframes pagingForwards
+    0% 
         left: calc(50% + 15px)
-        transform: rotateY(0)
+        transform: perspective(2000px) rotateY(0)
     100%
-        left: 50%
-        transform: rotateY(180deg)
-@-moz-keyframes auto-paging
-    0%
+        left: calc(50% - 15px)
+        transform: perspective(2000px) rotateY(-180deg)
+@-moz-keyframes pagingForwards
+    0% 
         left: calc(50% + 15px)
-        transform: rotateY(0)
+        transform: perspective(2000px) rotateY(0)
     100%
-        left: 50%
-        transform: rotateY(180deg)
-@-ms-keyframes auto-paging
-    0%
+        left: calc(50% - 15px)
+        transform: perspective(2000px) rotateY(-180deg)
+@-ms-keyframes pagingForwards
+    0% 
         left: calc(50% + 15px)
-        transform: rotateY(0)
+        transform: perspective(2000px) rotateY(0)
     100%
-        left: 50%
-        transform: rotateY(180deg)
+        left: calc(50% - 15px)
+        transform: perspective(2000px) rotateY(-180deg)
+
+
+@-webkit-keyframes pagingBackwards
+    0% 
+        left: calc(50% - 15px)
+        transform: perspective(2000px) rotateY(-180deg)
+    100%
+        left: calc(50% + 15px)
+        transform: perspective(2000px) rotateY(0)
+@-moz-keyframes pagingBackwards
+    0% 
+        left: calc(50% - 15px)
+        transform: perspective(2000px) rotateY(-180deg)
+    100%
+        transform: perspective(2000px) rotateY(0)
+        left: calc(50% + 15px)
+@-ms-keyframes pagingBackwards
+    0% 
+        left: calc(50% - 15px)
+        transform: perspective(2000px) rotateY(-180deg)
+    100%
+        left: calc(50% + 15px)
+        transform: perspective(2000px) rotateY(0)
     
 .book
-    // +shadow(0px, 0px, 0px, 10px, #002239)
-    // background-color: $darkblue
     height: 510px
     margin: 0 auto
     max-width: 768px
@@ -30,17 +51,7 @@
     width: 100%
     +mq('1023px', max)
         margin-bottom: 120px
-    // &-divisor
-    //     background: url(assets/imgs/book-divisor.png) center 8px repeat transparent
-    //     display: block 
-    //     +mq('1023px', max)
-    //         display: none
-    //     height: 100%
-    //     left: calc(50% - 30px/2)
-    //     position: absolute 
-    //     top: 0
-    //     width: 30px
-    //     z-index: 2
+        padding: 0 20px
     &-pagination
         align-items: flex-start
         +mq('1023px', max)
@@ -117,14 +128,14 @@
             background: url(assets/imgs/book-divisor.png) center 8px repeat transparent
             content: ""
             display: block 
-            +mq('1023px', max)
+            +mq('567px', max)
                 display: none
             height: 100%
             left: calc(50% - 30px/2)
             position: absolute 
             top: 0
             width: 30px
-            z-index: -1          
+            z-index: 1      
         .book-page
             background: url(assets/imgs/paperline.png) repeat 0 0 white
             border-left: 5px $darkblue solid
@@ -133,15 +144,17 @@
             display: inherit 
             height: inherit
             left: calc(50% + 15px)
-            +mq('414px', max)
+            +mq('567px', max)
                 left: 0
             position: absolute
             top: 0 
             transform-style: preserve-3d   
-            transform-origin: left center  
-            +transition(3s)
+            transform-origin: 0 50%  
+            transform: perspective(2000px) rotateY(0deg)
+            +mq('567px', max)
+                transform: none
             width: 50%
-            +mq('414px', max)
+            +mq('567px', max)
                 width: 100%
             z-index: 1
             &:not(:first-child)
@@ -167,22 +180,21 @@
                         padding: 31px calc(31px + 15px)
                         +rem(('font-size':13px,'line-height':16px))
             &.-flip
-                left: 50%
-                transform: rotateY(180deg)
-                &.-active
-                    z-index: 999!important
-                +mq('414px', max)
-                    left: 0
-                    transform: none
+                animation: pagingForwards 3s forwards
+                +mq('567px', max)
+                    animation: none
+            &.-flip-over
+                animation: pagingBackwards 3s forwards
+                +mq('567px', max)
+                    animation: none
             &.-cover
-                +animation('auto-paging', 3s)
-                left: 50%
-                transform: rotateY(180deg)
-                z-index: 2
-                +mq('1023px', max)
+                animation: pagingForwards 4s forwards
+                +mq('567px', max)
                     display: none
             &-content
                 height: 100%
                 p
-                    +mq('414px', max)
-                        transform: initial !important
+                    height: 100% 
+                    overflow: hidden
+                    +mq('567px', max)
+                        transform: initial!important
