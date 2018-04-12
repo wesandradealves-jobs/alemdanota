@@ -1,0 +1,24 @@
+.custom-checkbox
+    display: block
+    margin: 0 auto
+    position: relative
+    label,
+    input 
+        cursor: pointer
+        display: block 
+        left: calc(50% - 55px/2)
+        opacity: 0
+        margin: 0 auto 
+        position: absolute 
+        width: 55px
+        height: 35px 
+        z-index: 2
+        &:hover + label,
+        &:checked + label 
+            background-position: center bottom
+    label
+        background: url(assets/imgs/checkbox.png) center 0 no-repeat transparent
+        left: 0
+        opacity: 1
+        position: relative
+        z-index: 1

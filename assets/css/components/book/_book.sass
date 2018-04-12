@@ -44,10 +44,18 @@
         transform: perspective(2000px) rotateY(0)
     
 .book
-    height: 510px
-    margin: 0 auto
-    max-width: 768px
+    height: 630px
+    +mq('768px', max)
+        height: 1140px
+    +mq('414px', max)
+        height: 775px
+    margin: 0 auto 15px
+    +mq('414px', max)
+        margin-top: 30px
+    max-width: 1024px
     position: relative
+    +mq('768px', max)
+        padding: 30px 20px
     width: 100%
     &::after
         background-color: $darkblue
@@ -55,39 +63,44 @@
         display: block
         height: 100%
         left: calc(50% + 15px) 
+        +mq('768px', max)
+            left: 0
         position: absolute 
         top: 0
         z-index: 0
         width: 50%
-    +mq('1023px', max)
+        +mq('768px', max)
+            width: 100%
+    +mq('768px', max)
         margin-bottom: 120px
-        padding: 0 20px
     &-pagination
         align-items: flex-start
-        +mq('1023px', max)
+        +mq('768px', max)
             align-items: center
         @extend .flex
         flex-flow: column wrap 
-        +mq('1023px', max)
+        +mq('768px', max)
             flex-flow: row wrap
         justify-content: flex-start
-        +mq('1023px', max)
+        +mq('768px', max)
             justify-content: center
         left: -80px
-        +mq('1023px', max)
+        +mq('768px', max)
             left: 0
             margin: 55px auto -55px
+        +mq('768px', max)
+            margin: 55px auto -30px
         position: absolute 
-        +mq('1023px', max)
+        +mq('768px', max)
             position: relative 
         top: 0
         z-index: 2
         >*
             &:not(:last-child)
                 margin-bottom: 10px
-                +mq('1023px', max)
+                +mq('768px', max)
                     margin-bottom: 0
-            +mq('1023px', max)
+            +mq('768px', max)
                 margin: 0 5px
             &:nth-child(1),
             &.-active
@@ -95,16 +108,19 @@
             background-color: $darkblue                
             height: 20px
             width: 20px
+            +mq('768px', max)
+                height: 12px
+                width: 12px
     &-navigation
         align-items: center 
         @extend .flex
         flex-flow: row wrap 
         justify-content: space-between
         position: absolute 
-        +mq('1023px', max)
+        +mq('768px', max)
             position: relative
         top: 50%
-        +mq('1023px', max)
+        +mq('768px', max)
             top: 0
         width: 100%
         z-index: 2
@@ -112,8 +128,10 @@
             background-color: transparent
             cursor: pointer
             height: 90px
+            +mq('768px', max)
+                height: 45px
             left: -120px
-            +mq('1023px', max)
+            +mq('768px', max)
                 left: 0
             position: relative
             right: initial
@@ -123,7 +141,7 @@
             &:nth-child(2)
                 left: initial
                 right: -120px
-                +mq('1023px', max)
+                +mq('768px', max)
                     right: 0
                 transform: rotate(-90deg)
             svg,img 
@@ -136,15 +154,23 @@
         z-index: 1
         &::after
             background: url(assets/imgs/book-divisor.png) center 8px repeat transparent
+            +mq('768px', max)
+                background: url(assets/imgs/book-divisor-mobile.png) calc(50% + 17px) center repeat-x transparent
             content: ""
             display: block 
-            +mq('567px', max)
-                display: none
             height: 100%
+            +mq('768px', max)
+                height: 50px
             left: calc(50% - 30px/2)
+            +mq('768px', max)
+                left: 20px
             position: absolute 
             top: 0
             width: 30px
+            +mq('768px', max)
+                top: -40px
+                width: calc(100% - 30px)
+                z-index: 99
             z-index: 1      
         .book-page
             background: url(assets/imgs/paperline.png) repeat 0 0 white
@@ -154,17 +180,17 @@
             display: inherit 
             height: inherit
             left: calc(50% + 15px)
-            +mq('567px', max)
+            +mq('768px', max)
                 left: 0
             position: absolute
             top: 0 
             transform-style: preserve-3d   
             transform-origin: 0 50%  
             transform: perspective(2000px) rotateY(0deg)
-            +mq('567px', max)
+            +mq('768px', max)
                 transform: none
             width: 50%
-            +mq('567px', max)
+            +mq('768px', max)
                 width: 100%
             z-index: 1
             &:not(:first-child)
@@ -191,20 +217,20 @@
                         +rem(('font-size':13px,'line-height':16px))
             &.-flip
                 animation: pagingForwards 3s forwards
-                +mq('567px', max)
+                +mq('768px', max)
                     animation: none
             &.-flip-over
                 animation: pagingBackwards 3s forwards
-                +mq('567px', max)
+                +mq('768px', max)
                     animation: none
             &.-cover
                 animation: pagingForwards 4s forwards
-                +mq('567px', max)
+                +mq('768px', max)
                     display: none
             &-content
                 height: 100%
                 p
                     height: 100% 
                     overflow: hidden
-                    +mq('567px', max)
+                    +mq('768px', max)
                         transform: initial!important
