@@ -1,0 +1,137 @@
+.plans
+    &-form 
+        .submit-plans
+            background: url(assets/imgs/submit-plans.png) center center / contain no-repeat transparent
+            cursor: pointer
+            display: block
+            height: 76px
+            margin: 55px auto 0
+            overflow: hidden 
+            text-indent: 999px
+            width: 344px 
+            +mq('768px', max)
+                margin: 30px auto 0
+                width: 100%
+            +mq('414px', max)
+                margin: 0 auto
+    &-header
+        padding-top: 15px
+        +mq('768px', max)
+            padding-top: 0
+        &-ribbon 
+            display: block 
+            +mq('768px', max)
+                display: none
+            height: 120px
+            margin: 10px           
+            position: absolute
+            right: 0 
+            top: 0
+        .title
+            background: url(assets/imgs/svg/custom-plans-header.svg) center center no-repeat transparent
+            +mq('768px', max)
+                background: none
+            color: $purple
+            display: block 
+            font-family: 'Mosk Ultra-Bold 900'
+            +rem("font-size", 28px)
+            line-height: 50px
+            padding: 30px 0 0
+            text-align: center
+            text-transform: uppercase
+    &-list 
+        padding: 30px 40px 0
+        +mq('768px', max)
+            padding: 0 40px 0
+        .tall-text
+            color: $purple
+            font-family: 'Mosk Ultra-Bold 900'
+            +rem("font-size", 14px)
+            text-transform: uppercase            
+        .plans-list-header
+            align-items: center 
+            @extend .flex
+            +mq('768px', max)
+                display: none            
+            flex-flow: row wrap 
+            justify-content: space-between
+            width: 100%
+            >li 
+                @extend .tall-text
+                flex: 0 0 auto 
+                text-align: center
+                width: 33.333%
+                +mq('768px', max)
+                    width: 100%
+                &.-best-option
+                    > h2
+                        &:not([class])
+                            +rem("font-size", 12px)
+                            margin: -10px auto 0
+                            >span 
+                                z-index: 3
+                            &::after
+                                content: url("assets/imgs/plan-brightness.png")
+                                bottom: -35px
+                                display: block
+                                left: calc(50% - 199px/2)
+                                position: absolute
+                                z-index: 1 
+                            &::before
+                                content: url("assets/imgs/plan-highlight.png")
+                                bottom: -20px
+                                display: block
+                                left: calc(50% - 144px/2)
+                                position: absolute
+                                z-index: 2 
+        .plans-list-plans 
+            @extend .plans-list-header
+            +mq('768px', max)
+                display: flex
+            align-items: stretch
+            margin-top: 16px
+            >li
+                background: url(assets/imgs/plan-border.png) center center / 100% 100% no-repeat white
+                +mq('768px', max)
+                    background: none 
+                    border: 5px $purple solid
+                    &:not(:last-child)
+                        margin-bottom: 15px
+                padding: 15px
+                text-align: left 
+                text-transform: initial
+                +rem("font-size", 10px)
+                .custom-checkbox
+                    top: 25px
+                    +mq('768px', max)
+                        margin: 0 auto 
+                        top: 0
+                p 
+                    +rem("line-height", 9px)
+                    margin-bottom: -30px
+                    padding-bottom: 60px
+                    text-transform: initial
+                    +mq('768px', max)
+                        height: initial 
+                        margin-bottom: 0 
+                        padding-bottom: 0
+                    +mq('414px', max)
+                        display: none
+                h2,
+                h3 
+                    display: block
+                    +rem("font-size", 19px)
+                    +mq('414px', max)
+                        +rem("font-size", 16px)
+                        word-wrap: break-word
+                    margin: 0 auto
+                    text-align: center
+                    text-transform: uppercase
+                h2 
+                    display: none 
+                    margin-bottom: 15px
+                    +mq('768px', max)
+                        display: block
+                >.title 
+                    +mq('768px', max)
+                        margin: 0 auto 15px
