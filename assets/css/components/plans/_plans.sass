@@ -1,4 +1,6 @@
 .plans
+    +mq('768px', max)
+        padding-top: 15px
     &-form 
         .submit-plans
             background: url(assets/imgs/submit-plans.png) center center / contain no-repeat transparent
@@ -29,10 +31,10 @@
             top: 0
         .title
             background: url(assets/imgs/svg/custom-plans-header.svg) center center no-repeat transparent
-            +mq('768px', max)
-                background: none
             color: $purple
             display: block 
+            +mq('768px', max)
+                display: none 
             font-family: 'Mosk Ultra-Bold 900'
             +rem("font-size", 28px)
             line-height: 50px
@@ -93,7 +95,8 @@
             >li
                 background: url(assets/imgs/plan-border.png) center center / 100% 100% no-repeat white
                 +mq('768px', max)
-                    background: none 
+                    background-image: none 
+                    background-color: white
                     border: 5px $purple solid
                     &:not(:last-child)
                         margin-bottom: 15px

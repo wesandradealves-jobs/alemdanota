@@ -22,19 +22,39 @@ if(pages>0){
             break;
             case 1:
                 alt = "Afterwards",
-                disabled = false
+                disabled = ($(window).width() >= 768) ? true : false
             break;
         }
         $(".book-navigation").append("<button class='navigator "+((disabled == true) ? "_disabled" : '')+"'><img src='assets/imgs/svg/arrow.svg' alt='"+alt+"'></button>");
     }    
+    if($(window).width() >= 768){
+        var page = 1;
+        $(".book-page").eq(1).find("p").css({"opacity" : 0});
+        setTimeout(function(){ 
+            $(".book-page").eq(1).css({"animation" : "pagingForwards 4s forwards", "z-index" : pages});
+            $(".book-pagination").children().eq(1).addClass("-active");
+        }, 1500);   
+        setTimeout(function(){ 
+            $(".book-page").eq(1).find("p").css({"transform" : "rotateY(180deg)", "transform-origin" : "center center", "opacity" : 1});
+            $(".book-navigation").children().eq(1).removeClass("_disabled");
+        }, 2800);   
+    }        
 }
 // Functions
 
 function navigator(){
-    if(page >= 1){
-        $(".navigator").eq(0).removeClass("_disabled");
+    if($(window).width() >= 768){
+        if(page >= 2){
+            $(".navigator").eq(0).removeClass("_disabled");
+        } else {
+            $(".navigator").eq(0).addClass("_disabled")
+        }
     } else {
-        $(".navigator").eq(0).addClass("_disabled")
+        if(page >= 1){
+            $(".navigator").eq(0).removeClass("_disabled");
+        } else {
+            $(".navigator").eq(0).addClass("_disabled")
+        }        
     }
     if(page >= pages-1){
         $(".navigator").eq(1).addClass("_disabled")
@@ -49,13 +69,13 @@ function forwards(){
             setTimeout(function(){ 
                 // $(".book-page").eq(page).find("p").css("transform", "rotateY(180deg)");
                 $(".book-page").eq(page).find(".book-page-content").css("opacity", 0)
-            }, 900);
+            }, 1200);
         }
         $(".book-pagination").children().eq(page).addClass("-active");
 
         // if($(window).width() >= 768){
         //     if(page >= pages-1){
-        //         setTimeout(function(){ $(".book-page").eq(pages-1).find(".book-page-content").css("opacity", "0") }, 900);
+        //         setTimeout(function(){ $(".book-page").eq(pages-1).find(".book-page-content").css("opacity", "0") }, 1200);
         //     } 
         // }
     }
@@ -64,12 +84,14 @@ function backwards(){
     if(page <= pages){
         var nzindex = pages-1 - page;
         $(".book-page").eq(page+1).removeClass("-flip").addClass("-flip-over");
-        setTimeout(function(){ $(".book-page").eq(page+1).css("z-index", nzindex) }, 1200);
         if($(window).width() >= 768){
+            setTimeout(function(){ $(".book-page").eq(page+1).css("z-index", nzindex) }, 1200);
             setTimeout(function(){ 
                 // $(".book-page").eq(page+1).find("p").css("transform", "rotateY(0deg)") 
                 $(".book-page").eq(page+1).find(".book-page-content").css("opacity", 1)
-            }, 900);   
+            }, 1200);   
+        } else {
+            $(".book-page").eq(page+1).css("z-index", nzindex)
         }             
         $(".book-pagination").children().eq(page+1).removeClass("-active");    
 
