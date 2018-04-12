@@ -47,6 +47,12 @@ function forwards(){
         $(".book-page").eq(page).addClass("-flip").removeClass("-flip-over").css("z-index", pages);
         setTimeout(function(){ $(".book-page").eq(page).find("p").css("transform", "rotateY(180deg)") }, 1000);
         $(".book-pagination").children().eq(page).addClass("-active");
+
+        if($(window).width() >= 768){
+            if(page >= pages-1){
+                setTimeout(function(){ $(".book-page").eq(pages-1).find(".book-page-content").css("opacity", "0") }, 900);
+            } 
+        }
     }
 }
 function backwards(){
@@ -56,6 +62,12 @@ function backwards(){
         setTimeout(function(){  $(".book-page").eq(page+1).css("z-index", nzindex) }, 1200);
         setTimeout(function(){ $(".book-page").eq(page+1).find("p").css("transform", "rotateY(0deg)") }, 1000);                
         $(".book-pagination").children().eq(page+1).removeClass("-active");    
+
+        if($(window).width() >= 768){
+            if(page < pages-1){
+                setTimeout(function(){ $(".book-page").eq(pages-1).find(".book-page-content").css("opacity", "1") }, 900);
+            }        
+        }
     }
 }
 
