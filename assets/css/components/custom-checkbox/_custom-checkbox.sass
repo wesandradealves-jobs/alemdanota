@@ -1,24 +1,28 @@
 .custom-checkbox
     display: block
-    margin: 0 auto
+    height: 44px
+    left: 0
     position: relative
+    width: 100%
     label,
     input 
         cursor: pointer
         display: block 
-        left: calc(50% - 55px/2)
+        left: 0
         opacity: 0
         margin: 0 auto 
         position: absolute 
-        width: 55px
-        height: 35px 
+        width: 100%
         z-index: 2
         &:hover + label,
         &:checked + label 
-            background-position: center bottom
+            background-color: $green
+            border: 6px rgba(255,255,255,0) solid
+            color: white
+    input 
+        height: 100%
     label
-        background: url(assets/imgs/checkbox.png) center 0 no-repeat transparent
+        @extend .btn.btn-1
         left: 0
         opacity: 1
-        position: relative
         z-index: 1

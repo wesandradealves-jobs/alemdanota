@@ -44,11 +44,9 @@
         transform: perspective(6000px) rotateY(0)
     
 .book
-    height: 630px
+    height: 500px
     +mq('768px', max)
-        height: 1140px
-    +mq('414px', max)
-        height: 675px
+        height: auto
     margin: 0 auto 15px
     +mq('414px', max)
         margin-top: 30px
@@ -123,7 +121,7 @@
         +mq('768px', max)
             top: 0
         width: 100%
-        z-index: 2
+        z-index: 3
         .navigator
             background-color: transparent
             cursor: pointer
@@ -151,7 +149,7 @@
     &-pages
         display: block 
         height: 100%
-        z-index: 1
+        z-index: 2
         &::after
             background: url(assets/imgs/book-divisor.png) center 8px repeat transparent
             +mq('768px', max)
@@ -177,12 +175,16 @@
             border-left: 5px $darkblue solid
             cursor: grab
             +shadow(0px,0px,19px,-12px,#000)
-            display: inherit 
+            display: block 
+            +mq('768px', max)
+                display: none 
             height: inherit
             left: calc(50% + 15px)
             +mq('768px', max)
                 left: 0
             position: absolute
+            +mq('768px', max)
+                position: relative
             top: 0 
             transform-style: preserve-3d   
             transform-origin: 0 50%  
@@ -204,14 +206,16 @@
                         display: block 
                         height: 100%
                         left: 30px
-                        +mq('414px', max)
+                        +mq('768px', max)
                             left: 15px
                         position: absolute 
                         top: 0
                         width: 1px
                     &::after
                         left: initial
-                        right: 30px                
+                        right: 30px    
+                        +mq('768px', max)
+                            right: 15px          
                     >p 
                         padding: 31px calc(31px + 15px)
                         +rem(('font-size':15px,'line-height':16px))
@@ -227,6 +231,8 @@
                 animation: pagingForwards 4s forwards
                 +mq('768px', max)
                     display: none
+                    &+.book-page
+                        display: block
             &-content
                 height: 100%
                 p
