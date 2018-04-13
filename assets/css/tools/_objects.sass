@@ -125,6 +125,20 @@ p
 .btn
     cursor: pointer
     display: block 
+    &.btn-1
+        background-color: white
+        border: 6px $purple solid
+        color: $purple 
+        +rem("font-size", 16px)
+        padding: 5px 0
+        position: relative
+        text-transform: uppercase
+        text-align: center    
+        &:hover,
+        &.-toggle
+            background-color: $green
+            border-color: rgba(255,255,255,0)    
+            color: white
 
 .tcon
     width: 32px

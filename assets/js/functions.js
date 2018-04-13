@@ -19,9 +19,8 @@ function whatsapp(){
 
     whatsappbutton.setAttribute("formaction", url_base);	
 }
-
-jQuery(document).ready(function(){	
+$(document).ready(function(){	
     setTimeout( function(){ 
-    copyright()
+        copyright()
     }, 1000 );
 });	
