@@ -8,27 +8,13 @@
                             &:nth-child(2)
                                 color: $darkblue
                                 >img 
-                                    @-webkit-keyframes toTopAbout
+                                    @keyframes toTopAbout
                                         0% 
                                             top: -500px
                                             transform: scale(0) 
                                         100% 
                                             top: -115px
                                             transform: scale(1.0)
-                                    @-moz-keyframes toTopAbout
-                                        0% 
-                                            top: -500px
-                                            transform: scale(0) 
-                                        100% 
-                                            top: -115px
-                                            transform: scale(1.0)
-                                    @-ms-keyframes toTopAbout
-                                        0% 
-                                            top: -500px
-                                            transform: scale(0) 
-                                        100% 
-                                            top: -115px
-                                            transform: scale(1.0)                                      
                                     display: block
                                     top: -115px
                                     left: -240px
@@ -90,55 +76,25 @@
                 +mq('836px', max) 
                     display: none
                 margin-right: calc(1280px/2) 
-                @-webkit-keyframes cloud-about
+                @keyframes cloud-about
                     0% 
                         margin-right: calc(1230px/2)
                     100% 
                         margin-right: calc(1280px/2)
-                @-moz-keyframes cloud-about
-                    0% 
-                        margin-right: calc(1230px/2)
-                    100% 
-                        margin-right: calc(1280px/2)
-                @-ms-keyframes cloud-about
-                    0% 
-                        margin-right: calc(1230px/2)
-                    100% 
-                        margin-right: calc(1280px/2)     
                 +mq('1680px', max)
                     margin-right: calc(1070px/2)
-                    @-webkit-keyframes cloud-about
+                    @keyframes cloud-about
                         0% 
                             margin-right: calc(1285px/2)
                         100% 
                             margin-right: calc(1070px/2)
-                    @-moz-keyframes cloud-about
-                        0% 
-                            margin-right: calc(1285px/2)
-                        100% 
-                            margin-right: calc(1070px/2)
-                    @-ms-keyframes cloud-about
-                        0% 
-                            margin-right: calc(1285px/2)
-                        100% 
-                            margin-right: calc(1070px/2)                       
                 +mq('1440px', max)
                     margin-right: calc(1210px/2)
-                    @-webkit-keyframes cloud-about
+                    @keyframes cloud-about
                         0% 
                             margin-right: calc(1285px/2)
                         100% 
                             margin-right: calc(1210px/2)
-                    @-moz-keyframes cloud-about
-                        0% 
-                            margin-right: calc(1285px/2)
-                        100% 
-                            margin-right: calc(1210px/2)
-                    @-ms-keyframes cloud-about
-                        0% 
-                            margin-right: calc(1285px/2)
-                        100% 
-                            margin-right: calc(1210px/2)                      
                 +mq('1024px', max) 
                     display: none
                 right: 50%
@@ -147,55 +103,25 @@
                 z-index: 4                  
             &.-sun
                 bottom: calc(300px + 130px)
-                @-webkit-keyframes sun-about
+                @keyframes sun-about
                     0% 
                         bottom: calc(300px - 630px)
                     100% 
                         bottom: calc(300px + 130px)
-                @-moz-keyframes sun-about
-                    0% 
-                        bottom: calc(300px - 630px)
-                    100% 
-                        bottom: calc(300px + 130px)
-                @-ms-keyframes sun-about
-                    0% 
-                        bottom: calc(300px - 630px)
-                    100% 
-                        bottom: calc(300px + 130px)                  
                 +mq('1600px', max)
                     bottom: calc(300px + 130px - 65px)
-                    @-webkit-keyframes sun-about
+                    @keyframes sun-about
                         0% 
                             bottom: calc(300px - 630px)
                         100% 
                             bottom: calc(300px + 130px - 65px)
-                    @-moz-keyframes sun-about
-                        0% 
-                            bottom: calc(300px - 630px)
-                        100% 
-                            bottom: calc(300px + 130px - 65px)
-                    @-ms-keyframes sun-about
-                        0% 
-                            bottom: calc(300px - 630px)
-                        100% 
-                            bottom: calc(300px + 130px - 65px)                      
                 +mq('1440px', max)
                     bottom: calc(300px + 30px)
-                    @-webkit-keyframes sun-about
+                    @keyframes sun-about
                         0% 
                             bottom: calc(300px - 630px)
                         100% 
                             bottom: calc(300px + 30px)
-                    @-moz-keyframes sun-about
-                        0% 
-                            bottom: calc(300px - 630px)
-                        100% 
-                            bottom: calc(300px + 30px)
-                    @-ms-keyframes sun-about
-                        0% 
-                            bottom: calc(300px - 630px)
-                        100% 
-                            bottom: calc(300px + 30px)                      
                 +mq('836px', max) 
                     display: none                    
                 margin-right: calc(626px/2)

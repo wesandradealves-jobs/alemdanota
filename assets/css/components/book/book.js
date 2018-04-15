@@ -1,129 +1,101 @@
-var page = 0,
-    z = 0,
+var page = 2,
     pages = $(".book-page").children().length,
     content = $(".book-page-content").find("p"),
     total = content.outerHeight();
 // Pages
-for(i = 0; i <= pages; i++) { 
-    $(".book-page").eq(i).css("z-index", pages-i);
-}
+    for(i = 0; i <= pages; i++) { 
+        $(".book-page").eq(i).css("z-index", pages-i);
+        if(i < 2 && pages > 0){
+            $(".book-page").eq(i).addClass("-flip");
+        }
+    }
 // Helpers
-if(pages>0){
-    $(".book").append("<ul class='book-pagination'></ul>");
-    $(".book").append("<ul class='book-navigation'></ul>");
-    for(var k = 0; k < pages-1; k++) { 
-        $(".book-pagination").append("<li></li>");
-    }
-    for(var j = 0; j < 2; j++){
-        switch(j){
-            case 0:
-                alt = "Backwards",
-                disabled = true
-            break;
-            case 1:
-                alt = "Afterwards",
-                disabled = ($(window).width() >= 768) ? true : false
-            break;
+function helpers(){
+    if(pages > 0){
+        $(".book").append("<ul class='book-pagination'></ul>").prepend("<ul class='book-navigation'></ul>");
+        for(pagination = 0; pagination < pages-1; pagination++) { 
+            $(".book-pagination").append("<li "+((pagination < 2) ? 'class="-active"' : '')+"></li>");
+            if(pagination < 2){
+                switch(pagination){
+                    case 0:
+                        alt = "Backwards",
+                        disabled = true
+                    break;
+                    case 1:
+                        alt = "Afterwards",
+                        disabled = false
+                    break;
+                }
+                $(".book-navigation").append("<button class='navigator "+((disabled == true) ? "_disabled" : '')+"'><img src='assets/imgs/svg/arrow.svg' alt='"+alt+"'></button>");   
+            }
         }
-        $(".book-navigation").append("<button class='navigator "+((disabled == true) ? "_disabled" : '')+"'><img src='assets/imgs/svg/arrow.svg' alt='"+alt+"'></button>");
+        // Click
+        $( ".navigator" ).click(function() {
+            ($(this).index() > 0) ? forwards() : backwards()
+        });         
     }    
-    if($(window).width() > 768){
-        var page = 1;
-        $(".book-page").eq(1).find("p").css({"opacity" : 0});
-        setTimeout(function(){ 
-            $(".book-page").eq(1).css({"animation" : "pagingForwards 4s forwards", "z-index" : pages});
-            $(".book-pagination").children().eq(1).addClass("-active");
-        }, 1500);   
-        setTimeout(function(){ 
-            $(".book-page").eq(1).find("p").css({"transform" : "rotateY(180deg)", "transform-origin" : "center center", "opacity" : 1});
-            $(".book-navigation").children().eq(1).removeClass("_disabled");
-        }, 2800);   
-    }        
 }
-// Functions
 
-function navigator(){
-    if($(window).width() > 768){
-        if(page >= 2){
-            $(".navigator").eq(0).removeClass("_disabled");
-        } else {
-            $(".navigator").eq(0).addClass("_disabled")
-        }
-    } else {
-        if(page >= 1){
-            $(".navigator").eq(0).removeClass("_disabled");
-        } else {
-            $(".navigator").eq(0).addClass("_disabled")
-        }    
-    } 
-    if(page >= pages-2){
-        $(".navigator").eq(1).addClass("_disabled")
-    } else {
-        $(".navigator").eq(1).removeClass("_disabled");
-    }                  
-}
 function forwards(){
-    if(page >= 1){
-        if($(window).width() > 768){
-            $(".book-page").eq(page).addClass("-flip").removeClass("-flip-over").css("z-index", pages);
-            setTimeout(function(){ 
-                $(".book-page").eq(page).find(".book-page-content").css("opacity", 0);
-            }, 1200);
-        } else {
-            $(".book-page").eq(page).toggle();
-            $(".book-page").eq(page).next().toggle();
-        }
-        $(".book-pagination").children().eq(page).addClass("-active");
-    }
+    (page <= pages-2) ? page+=2 : '';
+    (page >= pages) ? $(".navigator").eq(1).addClass("_disabled") : '';
+    (page >= 2) ? $(".navigator").eq(0).removeClass("_disabled") : '';
+    $(".book-page:nth-child("+page+")").addClass("-flip").removeClass("-flip-over").prev().addClass("-flip").removeClass("-flip-over");
+    setTimeout(function(){ 
+        $(".book-pagination > li:nth-child("+page+")").prev().addClass("-active");
+        $(".book-pagination > li:nth-child("+page+")").addClass("-active");
+        $(".book-page:nth-child("+page+")").css("z-index", pages+page).prev().css("z-index", (pages+page)-1),
+        $(".book-page:nth-child("+page+")").find(".book-page-content").css("transform", "rotateY(180deg)");
+        (page == pages) ? $(".book-pagination > li").last().addClass("-active") : '';
+    }, 1900);   
+    console.log(page + " de " + pages);
 }
 function backwards(){
-    if(page <= pages){
-        if($(window).width() > 768){
-            var nzindex = pages-1 - page;
-            $(".book-page").eq(page+1).removeClass("-flip").addClass("-flip-over");
-            setTimeout(function(){ $(".book-page").eq(page+1).css("z-index", nzindex) }, 1200);
-            setTimeout(function(){ 
-                $(".book-page").eq(page+1).find(".book-page-content").css("opacity", 1)
-            }, 1200);   
-            $(".book-pagination").children().eq(page+1).removeClass("-active");    
-        } else {
-            $(".book-page").eq(page+1).toggle();
-            $(".book-page").eq(page+1).next().toggle();
-        }           
-        $(".book-pagination").children().eq(page+1).removeClass("-active")
-    }
+    (page >= pages-2) ? page-=2 : '';
+    (page < pages) ? $(".navigator").eq(1).removeClass("_disabled") : '';
+    (page <= 2) ? $(".navigator").eq(0).addClass("_disabled") : '';
+    $(".book-page:nth-child("+(page+2)+")").removeClass("-flip").addClass("-flip-over").prev().removeClass("-flip").addClass("-flip-over");  
+    setTimeout(function(){ 
+        $(".book-pagination > li:nth-child("+(page+2)+")").removeClass("-active").prev().removeClass("-active");
+        $(".book-page:nth-child("+(page+2)+")").css("z-index", (pages-page)-1).prev().css("z-index", pages-page);
+        (page < pages) ? $(".book-pagination > li").last().removeClass("-active") : '';
+    }, 1200); 
+    console.log(page + " de " + pages);
 }
-
-$( ".navigator" ).each(function() {
-    $(this).click(function() {
-        var index = $(this).index();
-        (index) ? (page < pages) ? page++ : '' : (page >= 0) ? page-- : '';
-        
-        navigator();
-       
-        if(index){
-            forwards();
-        } else {
-            backwards();
-        }
-    }); 
-});
-$(window).resize(function(){ 
-    window.location.href = window.location.href;
-    window.location.reload();
-});
+// $(window).resize(function(){ 
+//     window.locationef = window.location.href;
+//     window.location.reload();
+// });
 $(document).ready(function () {
-    $("body").swipe( {
-        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-            if(direction == "left"){
-                (page < pages-2) ? page++ : '';
-                forwards();
-            } else {
-                ($(window).width() > 768) ? (page >= 2) ? page-- : '' : (page >= 0) ? page-- : '' ;
-                backwards();
-            }
-            console.log(page + " " + pages);
-            navigator();                  
-        }
-    }); 
+    if(pages>0){
+        setTimeout(function(){ 
+            // Swipe
+            $("body").swipe( {
+                swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                    if(direction == "left"){
+                        forwards()
+                    } else {
+                        backwards()                       
+                    }
+                }
+            }); 
+            $(".book-page").css("cursor", "grabbing");
+            // Adding Helpers   
+            helpers();            
+            // Keypress
+            document.onkeydown = checkKey;
+            function checkKey(e) {
+                e = e || window.event;
+                if (e.keyCode == '37') {
+                    forwards()
+                }
+                else if (e.keyCode == '39') {
+                    backwards() 
+                }
+            }         
+        }, 3000);  
+        setTimeout(function(){ 
+            $(".book-page:nth-child(2)").css("z-index", pages).find(".book-page-content").css("transform", "rotateY(180deg)");
+        }, 1200);   
+    }    
 });
