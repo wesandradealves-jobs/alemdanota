@@ -19,6 +19,14 @@ function whatsapp(){
 
     whatsappbutton.setAttribute("formaction", url_base);	
 }
+function spinner(){
+    $(".book").append("<div class='loading-screen'><div class='loader'/></div></div>");
+    setTimeout(function(){ 
+        if($(".loading-screen").length){
+            $(".loading-screen").remove();
+        }
+    }, 3000);       
+}
 $(document).ready(function(){	
     setTimeout( function(){ 
         copyright()

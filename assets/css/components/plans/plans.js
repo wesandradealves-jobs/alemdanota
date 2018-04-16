@@ -1,25 +1,23 @@
+var btn = $(".plan-card .btn"),
+    url = [];
 
-// $(document).ready(function(){	
-//     $(".-best-option").find("h2").append("<img class='best-option-ribbon' src='assets/imgs/svg/best-option.svg'/>");
-//     $( ".plans-list-plans" ).children().hover(function() {
-//         if($(this).index() == 1){
-//             $(".plans-list-header").children().eq($(this).index()).addClass("hover");
-//         }
-//     }, function() {
-//         if($(this).index() == 1){
-//             $(".plans-list-header").children().eq($(this).index()).removeClass("hover");
-//         }
-//     });
-// });	
+for(i = 0; i < $(".plan-card").length; i++){
+    url.push($(".plan-card").eq(i).find(".btn").attr("href")); 
+}
 
-// function closePlanDetail(e){
-//     var e = $(e);
-//     e.prevAll().not($("h2")).toggle();
-//     e.prev(".custom-checkbox").find("input").prop( "checked", false );
-//     e.remove();
-// }
-// function showPlanDetail(e){
-//     var e = $(e);
-//     e.prevAll().nextAll().not($("h2")).toggle();
-//     e.closest("li").append("<a class='close-plan-detail' href='javascript:void(0)' onclick='closePlanDetail(this)'>Fechar</a>")
-// }
+$(document).ready(function(){	
+    if($(window).width() <= 768) {
+        btn.attr({"href" : "javascript:void(0)", "title" : "Saiba Mais"}).text("Saiba Mais");
+        btn.click(function() {
+            var e = $(this);
+            spinner();
+            setTimeout(function(){ 
+                e.parent().addClass("-active");
+                e.closest("ul").children().not(e.parent()).removeClass("-active").find(".plan-card-description p, .plan-card-description .title.-plan-price").hide();
+                e.prev().find("p, .title.-plan-price").show();
+                e.closest("ul").children().not(e.parent()).find(".btn").text("Saiba Mais").attr({"href" : "javascript:void(0)", "title" : "Saiba Mais"});
+                e.text("Assinar").attr({"href" : url[e.parent().index()], "title" : "Assinar"});
+            }, 3000);   
+        });   
+    }
+});	

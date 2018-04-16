@@ -1,154 +1,195 @@
-// .plans
-//     align-items: center    
-//     @extend .flex
-//     flex-flow: column wrap
-//     height: 100%
-//     justify-content: center
-//     top: -40px
-//     +mq('768px', max)
-//         padding-top: 15px
-//     &-list 
-//         padding: 0 40px
-//         width: 100%
-//         +mq('768px', max)
-//             padding: 0 25px
-//         .tall-text
-//             color: $purple
-//             font-family: 'Mosk Ultra-Bold 900'
-//             +rem("font-size", 14px)
-//             text-transform: uppercase            
-//         .plans-list-header
-//             align-items: center 
-//             @extend .flex
-//             +mq('768px', max)
-//                 display: none            
-//             flex-flow: row wrap 
-//             justify-content: center
-//             width: 100%
-//             >li 
-//                 +mq('769px', min)
-//                     &.-best-option
-//                         .best-option-ribbon
-//                             display: none
-//                             left: 0 
-//                             position: absolute
-//                             top: -26px
-//                             width: 100%
-//                             z-index: 1
-//                         &.hover
-//                             h2 
-//                                 +rem("font-size", 20px)
-//                                 >span 
-//                                     z-index: 3
-//                                 &::after
-//                                     content: "Melhor Opção"
-//                                     font-size: 60%
-//                                     display: block
-//                                     position: relative
-//                                     text-align: center  
-//                                     z-index: 3
-//                                 &::before
-//                                     background: url(assets/imgs/plan-brightness.png) center center / contain no-repeat transparent 
-//                                     content: ""
-//                                     display: block          
-//                                     height: 65px
-//                                     left: -35px
-//                                     position: absolute 
-//                                     top: 7px
-//                                     width: 199px
-//                                     z-index: 1
-//                                 .best-option-ribbon
-//                                     display: block
-//                                     z-index: 2
-//                 @extend .tall-text
-//                 flex: 0 0 auto 
-//                 text-align: center
-//                 width: 33.333%
-//                 +mq('768px', max)
-//                     width: 100%
-//         .plans-list-plans 
-//             @extend .plans-list-header
-//             +mq('768px', max)
-//                 display: flex
-//             align-items: stretch
-//             margin-top: 35px
-//             >li
-//                 border: 5px $purple solid
-//                 background-color: white
-//                 cursor: pointer
-//                 a
-//                     &.close-plan-detail
-//                         display: block 
-//                         margin-top: 5px
-//                         text-align: center 
-//                         text-decoration: underline !important
-//                     &.btn 
-//                         display: none
-//                         +mq('768px', max)
-//                             display: block 
-//                 +mq('769px', min)
-//                     +transition(500ms)
-//                     &:nth-child(2)
-//                         transform: scale(1.05)
-//                         z-index: 3
-//                     &:hover
-//                         border: 5px $green solid
-//                         +shadow(0px,0px,30px,10px,$green)
-//                         transform: scale(1.15)
-//                         z-index: 4
-//                         p
-//                             display: none
-//                             &:last-of-type
-//                                 display: block 
-//                 cursor: pointer
-//                 @extend .flex 
-//                 flex-flow: column wrap 
-//                 justify-content: space-between
-//                 +mq('768px', max)
-//                     &:not(:last-child)
-//                         margin-bottom: 15px
-//                 padding: 15px
-//                 text-align: left 
-//                 text-transform: initial
-//                 +rem("font-size", 10px)
-//                 .custom-checkbox
-//                     bottom: -60px
-//                     position: absolute 
-//                     +mq('768px', max)
-//                         display: none
-//                         bottom: 0 
-//                         position: relative
-//                 p 
-//                     +rem("line-height", 9px)
-//                     height: initial
-//                     text-transform: initial
-//                     +mq('769px', min)
-//                         &:last-of-type
-//                             display: none
-//                     +mq('768px', max)
-//                         display: none
-//                         margin-bottom: 15px
-//                         text-align: center
-//                 h2,
-//                 h3 
-//                     display: block
-//                     +rem("font-size", 19px)
-//                     margin: 0 auto
-//                     text-align: center
-//                     text-transform: uppercase
-//                 h3 
-//                     margin-top: 30px
-//                     +mq('768px', max)
-//                         &:last-of-type
-//                             display: none
-//                 h2 
-//                     display: none 
-//                     margin-bottom: 15px
-//                     +mq('768px', max)
-//                         &:first-of-type
-//                             +rem("font-size", 16px)
-//                             word-wrap: break-word                    
-//                         display: block
-//                 >.title 
-//                     +mq('768px', max)
-//                         margin: 0 auto 15px
+.plans
+    padding: 30px 15px 0
+    +mq('768px', max)
+        padding: 30px 40px 0
+    &-list 
+        align-items: stretch    
+        @extend .flex
+        flex-flow: row wrap
+        +mq('768px', max)
+            display: block
+            flex-flow: column wrap
+        justify-content: center
+        margin: 0 -5px
+        +mq('768px', max)
+            margin: 0 auto
+        .plan-card
+            +mq('768px', max)
+                background-color: white
+                border: 5px $purple solid
+                &.-active
+                    border-color: $green
+                    .btn 
+                        background-color: $green 
+                        border-color: rgba(255,255,255,0)
+                        color: white 
+            color: $darkblue
+            cursor: default
+            @extend .flex
+            flex-flow: column wrap
+            justify-content: space-between
+            flex: 0 0 auto 
+            +mq('768px', max)
+                &:not(:last-child)
+                    margin-left: auto 
+                    margin-right: auto
+                    margin-bottom: 15px
+            padding: 0 5px
+            +mq('768px', max)
+                padding: 10px
+            +transition(500ms)
+            width: 33.333%
+            +mq('768px', max)
+                width: 100%
+            z-index: 1
+            &:hover
+                z-index: 3
+                .plan-card-description
+                    background: url(assets/imgs/plan-border-hover.png) center center / 100% 100% no-repeat white    
+                    +mq('768px', max)
+                        background: none
+                    >p
+                        +mq('769px', min)
+                            &:first-of-type
+                                display: none 
+                            &:last-of-type
+                                display: initial           
+            p 
+                color: $purple
+                +rem('font-size', 10px)
+            .btn 
+                margin: 0 auto 
+                padding-top: 0
+                padding-bottom: 0
+                width: 85%
+                +mq('768px', max)
+                    width: 100%
+            .close-card
+                display: block
+                +rem("font-size", 10px)
+                margin: 5px auto 0
+                text-decoration: underline!important
+                text-align: center  
+            .title
+                color: $purple
+                display: block 
+                flex: 0 0 auto
+                +rem(('font-size' : 16px, 'line-height' : 16px))
+                font-family: 'Mosk Ultra-Bold 900'
+                text-transform: uppercase
+                text-align: center
+                &:not(.-plan-price)
+                    display: block
+                    left: 0
+                    position: absolute
+                    top: -19px 
+                    +mq('768px', max)
+                        position: relative 
+                        top: 0
+                    width: 100%
+                &.-plan-price
+                    margin-top: 15px
+                    padding: 0 0 15px
+                    +mq('768px', max)
+                        display: none
+                        margin-top: 5px
+                        margin-bottom: 5px
+                        padding: 0
+            &.-best-option
+                +mq('768px', max)
+                    .title
+                        &:not(.-plan-price)
+                            background: url(assets/imgs/plan-brightness.png) center center / contain no-repeat transparent
+                            padding: 10px 0
+                            margin-bottom: -15px    
+                    &.-active    
+                        .title
+                            &:not(.-plan-price)
+                                background: none
+                                padding: 0
+                                margin-bottom: 0                                                
+                +mq('769px', min)
+                    &::before,
+                    &::after
+                        content: ""
+                        display: none
+                        left: 0 
+                        position: absolute 
+                        top: 0 
+                        z-index: 1
+                    &::before
+                        background: url(assets/imgs/featured-plan.png) center center / contain no-repeat transparent
+                        height: 50px
+                        left: calc(50% - 135px/2)
+                        top: -55px
+                        width: 135px
+                    &::after
+                        background: url(assets/imgs/plan-brightness.png) center center / contain no-repeat transparent
+                        height: 45px
+                        left: calc(50% - 165px/2)                    
+                        top: -40px
+                        width: 165px
+                    .title
+                        &:not(.-plan-price)
+                            +transition('500ms')
+                            z-index: 3
+                            &::before
+                                background: url(assets/imgs/plan-underline.png) center center no-repeat transparent
+                                bottom: -12px
+                                content: ""
+                                display: none
+                                height: 12px
+                                left: calc(50% - 144px/2)
+                                position: absolute 
+                                width: 0
+                                +width('500ms')
+                            &::after
+                                content: "Melhor Opção"
+                                display: none 
+                                +rem('line-height', 10px)
+                                font-size: 60%
+                                z-index: 3
+                            span 
+                                z-index: 3
+                    &:hover
+                        &::before,
+                        &::after
+                            display: block                    
+                        .title
+                            &:not(.-plan-price)   
+                                top: -30px                 
+                                &::before,
+                                &::after
+                                    display: block 
+                                &::before
+                                    width: 144px
+            &-description
+                background: url(assets/imgs/plan-border.png) center center / 100% 100% no-repeat white
+                +mq('768px', max)
+                    background: none
+                @extend .flex
+                flex-flow: column wrap
+                justify-content: space-between                
+                flex: 1
+                position: relative
+                margin: 15px auto
+                +mq('768px', max)
+                    margin: 0 auto
+                padding: 10px
+                >p 
+                    flex: 1
+                    +mq('768px', max)
+                        display: none
+                        padding-bottom: 15px
+                    &:last-of-type
+                        display: none 
+            &:nth-child(2)
+                margin: 0 -11px
+                +mq('768px', max)
+                    margin: 0 auto 15px
+            &:nth-child(3)
+                .title
+                    &:not(.-plan-price)
+                        +rem(('font-size' : 11px, 'line-height' : 20px))
+                        +mq('768px', max)
+                            +rem(('font-size' : 16px, 'line-height' : 16px))
