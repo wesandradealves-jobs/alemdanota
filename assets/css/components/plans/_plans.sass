@@ -1,7 +1,7 @@
 .plans
-    padding: 30px 15px 0
+    padding: 20px 15px 0
     +mq('768px', max)
-        padding: 30px 40px 0
+        padding: 20px 40px 0
     &-list 
         align-items: stretch    
         @extend .flex
@@ -42,18 +42,23 @@
             +mq('768px', max)
                 width: 100%
             z-index: 1
-            &:hover
-                z-index: 3
-                .plan-card-description
-                    background: url(assets/imgs/plan-border-hover.png) center center / 100% 100% no-repeat white    
-                    +mq('768px', max)
-                        background: none
-                    >p
-                        +mq('769px', min)
-                            &:first-of-type
-                                display: none 
-                            &:last-of-type
-                                display: initial           
+            +mq('769px', min)
+                &:hover
+                    z-index: 3
+                    .btn 
+                        border-color: rgba(0,0,0,0)
+                        background-color: $green
+                        color: white 
+                    .plan-card-description
+                        background: url(assets/imgs/plan-border-hover.png) center center / 100% 100% no-repeat white    
+                        +mq('768px', max)
+                            background: none
+                        >p
+                            +mq('769px', min)
+                                &:first-of-type
+                                    display: none 
+                                &:last-of-type
+                                    display: initial           
             p 
                 color: $purple
                 +rem('font-size', 10px)
@@ -171,6 +176,8 @@
                 flex-flow: column wrap
                 justify-content: space-between                
                 flex: 1
+                +mq('769px', min)
+                    min-height: 346px
                 position: relative
                 margin: 15px auto
                 +mq('768px', max)
