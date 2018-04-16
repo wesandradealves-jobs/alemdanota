@@ -17,7 +17,7 @@
     +shadow(0px, 0px, 0px, 7px, $darkblue)
 
 .book
-    height: 510px
+    height: 548px
     +mq('768px', max)
         height: 710px
     +mq('434px', max) 
@@ -208,10 +208,8 @@
                 transform-origin: center center
                 >p 
                     color: black
-                    font-family: 'Indie Flower', cursive
-                    +rem(('line-height' : 16px, 'font-size' : 15.6px)) 
-                    +mq('737px', max)
-                        +rem('font-size', 10px)
+                    font-family: 'Mosk Medium 500'
+                    +rem(('line-height' : 22.4px, 'font-size' : 12.47px)) 
             &:not(:first-child)
                 +mq('434px', max) 
                     display: none
@@ -221,9 +219,7 @@
                 background-image: url(assets/imgs/paperline.png)
                 +shadow(0px, 0px, 15px, -10px, black)
                 >.book-page-content
-                    padding: 47px 47px
-                    +mq('737px', max)
-                        padding: 15px 47px 
+                    padding: 23px 47px 
                     &::after,
                     &::before
                         background-color: coral 
