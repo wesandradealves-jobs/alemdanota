@@ -27,7 +27,8 @@ function forwards(){
             setTimeout(function(){ 
                 $(".book-page:nth-child("+page+")").css("z-index", pages+page).prev().css("z-index", (pages+page)-1),
                 $(".book-page:nth-child("+page+")").find(".book-page-content").css("transform", "rotateY(180deg)");
-            }, 1900);   
+            }, 1900);  
+            spinner(); 
         }
     } else {
         if(page < pages){
@@ -53,6 +54,7 @@ function backwards(){
             setTimeout(function(){ 
                 $(".book-page:nth-child("+(page+2)+")").css("z-index", (pages-page)-1).prev().css("z-index", pages-page);
             }, 1200); 
+            spinner();
         }
     } else {
         if(page >= 2){
@@ -93,7 +95,6 @@ function helpers(){
         ($(this).index() > 0) ? forwards() : backwards()
     });         
 }
-
 $(document).ready(function () {
     $(window).resize(function(){ 
         if($(window).width() <= 736){
@@ -109,12 +110,7 @@ $(document).ready(function () {
             }, 1200);   
         }
         // Loader
-        $(".book").append("<div class='loading-screen'><div class='loader'/></div></div>");
-        setTimeout(function(){ 
-            if($(".loading-screen").length){
-                $(".loading-screen").remove();
-            }
-        }, 3000);   
+        spinner();
     }
     if(pages > 3){
         setTimeout(function(){ 
