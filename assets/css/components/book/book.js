@@ -95,8 +95,10 @@ function helpers(){
 }
 $(document).ready(function () {
     $(window).resize(function(){ 
-        window.location.href = window.location.href;
-        window.location.reload();
+        if($(window).width() <= 568){
+            window.location.href = window.location.href;
+            window.location.reload();
+        }
     });
     if(pages > 1){
         // Flipping first page
