@@ -28,7 +28,6 @@ function forwards(){
                 $(".book-page:nth-child("+page+")").css("z-index", pages+page).prev().css("z-index", (pages+page)-1),
                 $(".book-page:nth-child("+page+")").find(".book-page-content").css("transform", "rotateY(180deg)");
             }, 1900);  
-            spinner(); 
         }
     } else {
         if(page < pages){
@@ -54,7 +53,6 @@ function backwards(){
             setTimeout(function(){ 
                 $(".book-page:nth-child("+(page+2)+")").css("z-index", (pages-page)-1).prev().css("z-index", pages-page);
             }, 1200); 
-            spinner();
         }
     } else {
         if(page >= 2){
