@@ -95,10 +95,8 @@ function helpers(){
 }
 $(document).ready(function () {
     $(window).resize(function(){ 
-        if($(window).width() <= 736){
-            window.location.href = window.location.href;
-            window.location.reload();
-        }
+        window.location.href = window.location.href;
+        window.location.reload();
     });
     if(pages > 1){
         // Flipping first page

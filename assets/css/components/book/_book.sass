@@ -17,7 +17,7 @@
     +shadow(0px, 0px, 0px, 7px, $darkblue)
 
 .book
-    height: 548px
+    height: 414.85pt
     +mq('768px', max)
         height: 710px
     +mq('434px', max) 
@@ -25,7 +25,7 @@
     margin: 0 auto 35px
     +mq('737px', max)
         margin: 0 auto 85px
-    max-width: 768px
+    max-width: calc(359.956pt*2)
     position: relative
     width: 100%
     +mq('1030px', max)
@@ -211,6 +211,15 @@
                     font-family: 'Mosk Medium 500'
                     transform: scale(1.03)
                     +rem(('line-height' : 22px, 'font-size' : 12px)) 
+            +mq('768px', min)
+                &:not(:first-child):not(:last-child)
+                    background-repeat: repeat, no-repeat, no-repeat, no-repeat
+                    &:nth-child(odd)
+                        background-image: url(assets/imgs/paperline.png), url(assets/imgs/running-boy-book.png), url(assets/imgs/boy-book.png)
+                        background-position: 0 0, calc(100% - 30px) calc(100% - 30px), calc(50% - 130px) calc(100% - 50px)
+                    &:nth-child(even)                    
+                        background-image: url(assets/imgs/paperline.png), url(assets/imgs/sun-book.png), url(assets/imgs/love-me-book.png), url(assets/imgs/scratches-book.png)
+                        background-position: 0 0,calc(100% - 30px) calc(100% - 30px),calc(100% - 30px) calc(100% - 80px),calc(50% - 100px) calc(100% - 30px)
             &:not(:first-child)
                 +mq('434px', max) 
                     display: none
@@ -221,6 +230,8 @@
                 +shadow(0px, 0px, 15px, -10px, black)
                 >.book-page-content
                     padding: 25px 50px 0 
+                    +mq('768px', max)
+                        padding: 25px 50px 30px
                     &::after,
                     &::before
                         background-color: coral 
