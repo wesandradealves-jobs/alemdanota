@@ -1,5 +1,5 @@
 .plans
-    padding: 20px 15px 0
+    padding: 48px 30px 0
     +mq('768px', max)
         padding: 20px 40px 0
     &-list 
@@ -50,7 +50,8 @@
                         background-color: $green
                         color: white 
                     .plan-card-description
-                        background: url(assets/imgs/plan-border-hover.png) center center / 100% 100% no-repeat white    
+                        border-color: $green
+                        // background: url(assets/imgs/plan-border-hover.png) center center / 100% 100% no-repeat white    
                         +mq('768px', max)
                             background: none
                         >p
@@ -169,7 +170,10 @@
                                 &::before
                                     width: 144px
             &-description
-                background: url(assets/imgs/plan-border.png) center center / 100% 100% no-repeat white
+                background-color: white
+                +mq('769px', min)
+                    border: 5px $purple solid
+                // background: url(assets/imgs/plan-border.png) center center / 100% 100% no-repeat white
                 +mq('768px', max)
                     background: none
                 @extend .flex
@@ -177,7 +181,7 @@
                 justify-content: space-between                
                 flex: 1
                 +mq('769px', min)
-                    min-height: 346px
+                    min-height: 380px
                 position: relative
                 margin: 15px auto
                 +mq('768px', max)
@@ -191,7 +195,7 @@
                     &:last-of-type
                         display: none 
             &:nth-child(2)
-                margin: 0 -11px
+                margin: 0 -9px
                 +mq('768px', max)
                     margin: 0 auto 15px
             &:nth-child(3)
