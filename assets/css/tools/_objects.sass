@@ -100,7 +100,9 @@ input
         padding-right: 30px        
 p 
     b,strong 
-        font-weight: bold
+        &.strike
+            display: inline  
+            background: url(assets/imgs/text-strike.png) center center / 100% 100% no-repeat transparent 
 
 @for $i from 1 through 5
     h#{$i}
@@ -231,3 +233,4 @@ p
         -webkit-transform: translateZ(0)
         -ms-transform: translateZ(0)
         transform: translateZ(0)
+
