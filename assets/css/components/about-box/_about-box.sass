@@ -140,6 +140,8 @@
             color: white
             display: block 
             +rem('font-size', 16px)
+            +mq('1600px', max)
+                +rem('font-size', 11px)
             overflow: hidden
             +transition(500ms)
             text-align: justify
