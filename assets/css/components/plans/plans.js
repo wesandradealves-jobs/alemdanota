@@ -15,9 +15,11 @@ $(document).ready(function(){
                 e.parent().addClass("-active");
                 e.closest("ul").children().not(e.parent()).removeClass("-active").find(".plan-card-description p, .plan-card-description .title.-plan-price").hide();
                 e.prev().find("p, .title.-plan-price").show();
-                e.closest("ul").children().not(e.parent()).find(".btn").text("Saiba Mais").attr({"href" : "javascript:void(0)", "title" : "Saiba Mais"});
-                e.text("Assinar").attr({"href" : url[e.parent().index()], "title" : "Assinar"});
+                e.closest("ul").children().not(e.parent()).find(".btn").text("Saiba Mais").attr({"href" : "javascript:void(0)", "title" : "Saiba Mais", "target" : ""});
+                e.text("Assinar").attr({"href" : url[e.parent().index()], "title" : "Assinar", "target" : "_blank"});
             }, 3000);   
         });   
+    } else {
+        btn.attr({"target" : "_blank"});
     }
 });	

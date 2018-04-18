@@ -63,7 +63,12 @@
             justify-content: center
             left: 0
             top: initial
-            width: 100%        
+            width: 100%    
+        +mq('434px', max)
+            position: fixed
+            bottom: 40px
+            width: 100%
+            z-index: 100    
         >*
             +mq('1031px', min)
                 @for $i from 1 through 99
@@ -97,7 +102,10 @@
             bottom: -70px
             top: initial
         +mq('434px', max) 
-            bottom: -63px
+            bottom: 32px
+            position: fixed
+            z-index: 101
+            width: calc(100% - 40px)
         width: 100%
         z-index: 1
         +mq('768px', max)
