@@ -9,8 +9,7 @@ function redirect(e){
     if($(window).width() > 768) {
         var el = $(e),
             url = el.find(".btn").attr("href");
-            document.location = url;
-            return false;
+            window.open(url, '_blank');
     }
 }
 
