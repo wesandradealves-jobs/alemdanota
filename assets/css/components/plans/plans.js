@@ -5,6 +5,15 @@ for(i = 0; i < $(".plan-card").length; i++){
     url.push($(".plan-card").eq(i).find(".btn").attr("href")); 
 }
 
+function redirect(e){
+    if($(window).width() > 768) {
+        var el = $(e),
+            url = el.find(".btn").attr("href");
+            document.location = url;
+            return false;
+    }
+}
+
 $(document).ready(function(){	
     if($(window).width() <= 768) {
         btn.attr({"href" : "javascript:void(0)", "title" : "Saiba Mais"}).text("Saiba Mais");
