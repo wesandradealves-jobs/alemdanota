@@ -18,11 +18,15 @@
 
 .book
     height: 454.85pt
+    +mq('1024px', max)
+        height: 484.85pt
     +mq('768px', max)
-        height: 710px
+        height: 850px
     +mq('434px', max)  
         height: auto
     margin: 0 auto 35px
+    +mq('768px', max)
+        margin: 0 auto 90px
     +mq('737px', max)
         margin: 0 auto 85px
     max-width: calc(359.956pt*2)
@@ -223,13 +227,71 @@
                     +rem(('line-height' : 22px, 'font-size' : 12px)) 
             +mq('768px', min)
                 &:not(:first-child):not(:last-child)
-                    background-repeat: repeat, no-repeat, no-repeat, no-repeat
-                    &:nth-child(odd)
-                        background-image: url(assets/imgs/paperline.png), url(assets/imgs/running-boy-book.png), url(assets/imgs/boy-book.png)
-                        background-position: 0 0, calc(100% - 30px) calc(100% - 30px), calc(50% - 130px) calc(100% - 50px)
-                    &:nth-child(even)                    
-                        background-image: url(assets/imgs/paperline.png), url(assets/imgs/sun-book.png), url(assets/imgs/love-me-book.png), url(assets/imgs/scratches-book.png)
-                        background-position: 0 0,calc(100% - 30px) calc(100% - 30px),calc(100% - 30px) calc(100% - 80px),calc(50% - 100px) calc(100% - 30px)
+                    background-repeat: repeat,
+                    no-repeat,
+                    no-repeat,
+                    no-repeat,
+                    no-repeat,
+                    no-repeat,
+                    no-repeat,
+                    no-repeat
+                    background-image: url(assets/imgs/paperline.png)
+                    +mq('1025px', min)
+                        &:nth-child(2)
+                            background-image: url(assets/imgs/paperline.png), 
+                            url(assets/imgs/boy-book.png), 
+                            url(assets/imgs/asterisk-book.png), 
+                            url(assets/imgs/little-scratch-book.png),
+                            url(assets/imgs/middle-detail-book.png),
+                            url(assets/imgs/arrow-book.png),
+                            url(assets/imgs/scratches-book.png)
+                            background-position: 0 0, 
+                            80px 25px, 
+                            calc(100% - 25px) 65px, 
+                            25px 53%, 
+                            center 54%, 
+                            105px 50%, 
+                            center calc(100% - 10px)
+                        &:nth-child(3)
+                            background-image: url(assets/imgs/paperline.png), 
+                            url(assets/imgs/running-boy-book.png),
+                            url(assets/imgs/sun-book.png)
+                            background-position: 0 0,
+                            right 44%,
+                            40px bottom
+                        &:nth-child(4)
+                            background-image: url(assets/imgs/paperline.png),
+                            url(assets/imgs/love-me-book.png)
+                            background-position: 0 0,
+                            center calc(100% - 50px)
+                        &:nth-child(5)
+                            background-image: url(assets/imgs/paperline.png),
+                            url(assets/imgs/scratches-book.png),
+                            url(assets/imgs/sun-book.png)
+                            background-position: 0 0,
+                            center 40%,
+                            20% 60% 
+                        &:nth-child(6)
+                            background-image: url(assets/imgs/paperline.png),
+                            url(assets/imgs/little-scratch-book.png),
+                            url(assets/imgs/scratches-book.png)
+                            background-position: 0 0,
+                            40px 40%,
+                            33% 40%  
+                        &:nth-child(7)
+                            background-image: url(assets/imgs/paperline.png),
+                            url(assets/imgs/middle-detail-book.png),
+                            url(assets/imgs/boy-book.png)
+                            background-position: 0 0,
+                            center 40%,
+                            center calc(100% - 50px)
+                        &:nth-child(8)
+                            background-image: url(assets/imgs/paperline.png),
+                            url(assets/imgs/love-me-book.png),
+                            url(assets/imgs/running-boy-book.png)
+                            background-position: 0 0,
+                            center calc(100% - 100px),
+                            62% calc(100% - 35px)                             
             &:not(:first-child)
                 +mq('434px', max) 
                     display: none
@@ -239,7 +301,9 @@
                 background-image: url(assets/imgs/paperline.png)
                 +shadow(0px, 0px, 15px, -10px, black)
                 >.book-page-content
-                    padding: 25px 50px 0 
+                    +mq('1025px', min)
+                        padding: 48px 50px 0
+                    padding: 28px 50px 0 
                     +mq('768px', max)
                         padding: 25px 50px 30px
                     &::after,
