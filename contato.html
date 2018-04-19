@@ -71,7 +71,7 @@
             </h2>
           </div>
           <div>
-              <form class="contact-form" action="send_mail.php" method="POST">
+              <form class="contact-form" action="inc/send_mail.php" method="POST">
                 <span>
                   <input required="required" id="user_nome" name="user_nome" maxlength="40" minlength="3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nome'" type="text" placeholder="Nome">
                 </span>
@@ -82,8 +82,8 @@
                   <textarea required="required" id="user_msg" minlength="10" maxlength="2000" name="user_msg" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensagem'" placeholder="Mensagem"></textarea>
                 </span>
                 <span>
-                  <input type="submit" value="Enviar por Email" class="btn -yellow"> 
-                  <input id="whatsapp" onclick="whatsapp();" type="submit" value="Enviar por WhatsApp" class="btn -green">  
+                  <input id="send_email" type="submit" value="Enviar por Email" class="btn -yellow"> 
+                  <a onclick="sendWPP(this)" id="whatsapp" class="btn -green">Enviar por WhatsApp</a>
                 </span>
               </form>
           </div>
