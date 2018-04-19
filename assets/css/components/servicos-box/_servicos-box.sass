@@ -198,9 +198,23 @@
             &:hover,
             &.-active
                 background: url(assets/imgs/svg/selected-service.svg) center center / contain no-repeat transparent
+                +mq('736px', max)
+                    >a 
+                        span 
+                            top: 100%
+                            color: white
+                            display: block
+                            +rem('font-size', 10px)
+                            font-family: 'Mosk Extra-Bold 800'
+                            left: 0
+                            position: absolute 
+                            text-align: center
+                            width: 100%      
+                            +mq('434px', max)     
+                                +rem('font-size', 16px)        
             >a 
                 span 
-                    display: none
+                    display: none            
                 svg,
                 img 
                     height: 70px

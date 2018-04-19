@@ -63,6 +63,10 @@
     }
     boxNavigation();
 
+    if($(window).width() <= 414){
+        $(".servicos-box-navigation").children().eq(0).addClass("-active");
+    }
+
     // Swipe
     $(".servicos-box").swipe( {
         swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
