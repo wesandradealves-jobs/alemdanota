@@ -53,11 +53,11 @@ if (isset($_POST['send_email']) && !empty($_POST['user_email']) && !empty($_POST
 	} else {
 		$_SESSION['msg'] = "O e-mail informado não é válido. <br> Por gentileza, verifique o e-mail e tente novamente.";
 		$_SESSION['type'] = "mistakes";
-		header('Location:index.php');
+		header('Location:https://www.alemdanota.com.br');
 	}
 
 } else {
-	header('Location:index.html');
+	header('Location:https://www.alemdanota.com.br');
 }
 
 ?>
