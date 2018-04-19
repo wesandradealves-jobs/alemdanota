@@ -38,11 +38,9 @@
                         el.removeClass("-active");
                         el.eq(i).addClass("-active");
                         if($(window).width() <= 414){
-                            if($(window).width() <= 320){
-                                $(".servicos-box-navigation").css("left", 80-180*e.index())
-                            } else {
-                                $(".servicos-box-navigation").css("left", 120-180*e.index())
-                            }
+                            $(".servicos-box-navigation").css("left", 80-180*e.index())
+                        } else {
+                            $(".servicos-box-navigation").css("left", 0)
                         }
                     });
             });          
@@ -52,9 +50,7 @@
                 $( ".servicos-box-navigation li" ).eq(i).find(".servicos-box-caption p").html(content[i]);
             }  
             $(window).resize(function() {
-                if($(window).width() > 320 && $(window).width() <= 414){
-                    $(".servicos-box-navigation").css("left", "120px")
-                } else if($(window).width() <= 320){
+                if($(window).width() >= 320 && $(window).width() <= 414){
                     $(".servicos-box-navigation").css("left", "80px")
                 } else {
                     $(".servicos-box-navigation").css("left", 0)
@@ -63,16 +59,14 @@
     }
     boxNavigation();
 
-    if($(window).width() <= 414){
-        $(".servicos-box-navigation").children().eq(0).addClass("-active");
-    }
+    $(".servicos-box-navigation").children().eq(0).addClass("-active");
 
     // Swipe
     $(".servicos-box").swipe( {
         swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
             var e = $(this);
             if($(window).width() <= 414){
-                (direction == "right") ? x-- : x++;
+                (direction == "right") ? (x > 0) ? x-- : '' : x++;
                 if($(".servicos-box-navigation").css("left") != "-460px"){
                     $(".servicos-box-navigation").css({"right" : "initial", "left" : 80-180*x});
                     $(".servicos-box-navigation").find(".-active").removeClass("-active");
