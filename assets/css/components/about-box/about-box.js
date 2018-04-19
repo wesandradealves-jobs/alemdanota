@@ -62,7 +62,7 @@ $("body").swipe( {
 $(document).ready(function () {
     $(".about-box-content").bind("mousewheel", function(event, delta) {
         if($(this).find("p").outerHeight() >= $(this).outerHeight()){
-            (delta < 0) ? (i < 0) ? i++ : '' : (i*40 > -$(".about-box-content p").outerHeight() + 40) ? i-- : '';
+            (delta < 0) ? (i*40 > -$(".about-box-content p").outerHeight() + 40) ? i-- : '' : (i < 0) ? i++ : '';
             (i*40 > -$(".about-box-content p").outerHeight() - -150) ? $(".text-down").removeClass("_disabled") : '';
             (i >= 0 && !$(".text-up").is("._disabled")) ? $(".text-up").addClass("_disabled") : '';
             (i*40 < -$(".about-box-content p").outerHeight() - -150) ? $(".text-down").addClass("_disabled") : '';
