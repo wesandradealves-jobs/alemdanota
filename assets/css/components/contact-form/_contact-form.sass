@@ -84,6 +84,10 @@
                 width: 100% 
         &.-green
             background: url(assets/imgs/svg/btn-2.svg) center center / 100% 100% no-repeat transparent
+            display: inline-flex
+            flex-flow: row wrap
+            align-items: center
+            justify-content: center            
             +mq('836px', max) 
                 background-size: 100% auto
                 background-image: url(assets/imgs/svg/submit-btn-green-mobile.svg)
@@ -92,7 +96,7 @@
                 width: 240px
             @media only screen and (max-width:1024px) and (orientation: landscape),
             screen and (max-width:1023px)  
-                width: 190px
+                width: 190px 
             +mq('836px', max) 
                 margin-left: auto 
                 margin-right: auto
