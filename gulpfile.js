@@ -14,6 +14,7 @@ var gulp = require('gulp'),
         mode: 0755
     },
     sass = require('gulp-sass'),
+    gzip = require('gulp-gzip'),
     runSequence = require('run-sequence');
 
 gulp.task('sass', function() {
@@ -67,6 +68,7 @@ gulp.task('images', function(){
 gulp.task('css-dist', function(){
   return gulp.src('*.css')
     .pipe(imagemin())
+    .pipe(gzip())
     .pipe(gulp.dest('./dist'));
 });
 
@@ -86,6 +88,7 @@ gulp.task('commons-js', function() {
 
 gulp.task('dist-js', function() {
     return gulp.src(['assets/js/vendors.js','assets/js/commons.js'])
+        .pipe(gzip())
         .pipe(gulp.dest('dist/assets/js/')
     );
 });
@@ -93,6 +96,7 @@ gulp.task('dist-js', function() {
 gulp.task('minify', function() {
     return gulp.src('*.html')
       .pipe(htmlmin({collapseWhitespace: true}))
+      .pipe(gzip())
       .pipe(gulp.dest('./dist'));
 });
 
