@@ -66,7 +66,7 @@ gulp.task('images', function(){
 });
 
 gulp.task('css-dist', function(){
-  return gulp.src('*.css')
+  return gulp.src(['*.css'])
     .pipe(imagemin())
     // .pipe(gzip())
     .pipe(gulp.dest('./dist'));
