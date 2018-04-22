@@ -1,0 +1,229 @@
+.servicos-box
+    flex: 1
+    padding-left: 60px
+    @media only screen and (max-width:1024px) and (orientation: landscape),
+    screen and (max-width:1023px)
+        padding-left: 0    
+    .btn
+        color: white 
+        display: block
+        font-family: 'Mosk Extra-Bold 800'
+        height: 45px
+        +rem('font-size', 16px)
+        margin: 60px auto 0
+        +mq('1366px', max) 
+            margin: 40px auto 0
+        +mq('414px', max) 
+            margin: 0 auto     
+        position: relative 
+        text-align: center  
+        width: 320px
+        +mq('414px', max)   
+            width: 100%
+        span 
+            line-height: 45px
+            position: relative
+            z-index: 2
+        img,
+        svg
+            display: block
+            height: 100%
+            left: 0
+            position: absolute 
+            top: 0
+            z-index: 1
+            +mq('414px', max)   
+                width: 100%
+            &.hovering
+                display: none 
+        &:hover
+            img,svg 
+                &:not(.hovering)
+                    display: none
+                &.hovering
+                    display: block
+            
+    &-caption
+        align-items: center
+        color: white
+        display: none   
+        +mq('1365px', max)
+            display: none!important  
+        font-family: 'Mosk Ultra-Bold 900'
+        +rem('font-size', 12px)
+        justify-content: center
+        height: 89px
+        +mq('1024px', max)
+            height: 70px
+        padding: 5px
+        position: absolute 
+        right: -137px
+        top: 0
+        text-align: center
+        width: 120px
+        +mq('1024px', max)
+            width: 95px
+        p 
+            padding-left: 15px
+            padding-right: 15px
+            word-wrap: break-word            
+            width: 100%
+        svg,
+        img 
+            display: block 
+            height: 100%
+            left: 0
+            position: absolute 
+            top: 0
+    &-content
+        margin-top: 40px
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)   
+            max-width: 568px
+            margin-left: auto
+            margin-right: auto    
+            padding: 0 30px        
+        >div
+            align-items: flex-start
+            color: white 
+            @extend .flex
+            flex-flow: row wrap 
+            justify-content: space-between
+            &:not(.-active)
+                display: none
+            >h3 
+                flex: 0 0 auto
+                font-family: 'Mosk Ultra-Bold 900'
+                +rem('font-size', 25.25px)
+                margin-right: 50px
+                margin-left: -340px
+                +mq('1366px', max) 
+                    margin-left: -385px
+                text-align: right
+                text-transform: uppercase
+                width: 290px
+                @media only screen and (max-width:1024px) and (orientation: landscape),
+                screen and (max-width:1023px)     
+                    display: none             
+            >p 
+                flex: 1
+                +rem('font-size', 14px)
+                overflow: hidden
+                text-align: justify
+                +mq('414px', max) 
+                    >span 
+                        display: none
+    &-navigation
+        align-items: center
+        @extend .flex
+        flex-flow: row wrap 
+        +transition(500ms)
+        justify-content: space-between 
+        @media only screen and (max-width:1024px) and (orientation: landscape),
+        screen and (max-width:1023px)   
+            max-width: 768px
+            margin-left: auto
+            margin-right: auto   
+        +mq('768px', max) 
+            padding-left: 30px
+            padding-right: 30px
+        +mq('414px', max) 
+            left: 90px
+            max-width: initial 
+            width: 720px    
+            padding-left: 0
+            padding-right: 0
+        @media only screen and (max-width:836px) and (orientation: landscape)
+            left: 0 
+            width: 100%         
+        >li 
+            @-webkit-keyframes scaling
+                0% 
+                    transform: scale(.8)
+                50%
+                    transform: scale(1.1)
+                100% 
+                    transform: scale(1)
+            @-moz-keyframes scaling
+                0% 
+                    transform: scale(.8)
+                50%
+                    transform: scale(1.1)
+                100% 
+                    transform: scale(1)
+            @-ms-keyframes scaling
+                0% 
+                    transform: scale(.8)
+                50%
+                    transform: scale(1.1)
+                100% 
+                    transform: scale(1)    
+            +mq('1280px', min)
+                &:hover
+                    animation: scaling 1s ease-out alternate   
+                    [class*="caption"]
+                        display: flex  
+            align-items: inherit
+            @extend .flex
+            flex-flow: column wrap 
+            justify-content: center 
+            opacity: .1
+            z-index: 1
+            &:hover,
+            &.-active
+                opacity: 1   
+            &:hover
+                z-index: 10     
+            +transition(500ms)  
+            height: 95px
+            width: 120px    
+            +mq('1280px', max)
+                height: 95px
+                width: 105px            
+            +mq('1024px', max)
+                height: 60px
+                width: 75px
+            @media only screen and (max-width:1024px) and (orientation: landscape),
+            screen and (max-width:1023px)     
+                height: 120px
+                width: 120px   
+                +mq('836px', max)    
+                    height: 150px
+                    width: 150px    
+                @media only screen and (max-width:836px) and (orientation: landscape)
+                    height: 110px
+                    width: 110px
+            &:hover,
+            &.-active
+                background: url(assets/imgs/svg/selected-service.svg) center center / contain no-repeat transparent
+                +mq('736px', max)
+                    >a 
+                        span 
+                            top: 100%
+                            color: white
+                            display: block
+                            +rem('font-size', 10px)
+                            font-family: 'Mosk Extra-Bold 800'
+                            left: 0
+                            position: absolute 
+                            text-align: center
+                            width: 100%      
+                            +mq('434px', max)     
+                                +rem('font-size', 16px)        
+            >a 
+                span 
+                    display: none            
+                svg,
+                img 
+                    height: 70px
+                    +mq('1280px', max)
+                        height: 50px
+                    +mq('1024px', max)
+                        height: 40px
+                    @media only screen and (max-width:1024px) and (orientation: landscape),
+                    screen and (max-width:1023px)   
+                        height: 55px  
+                    +mq('836px', max) 
+                        height: 90px   
+                    @media only screen and (max-width:836px) and (orientation: landscape)
+                        height: 60px                   

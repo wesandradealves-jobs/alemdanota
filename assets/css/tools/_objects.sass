@@ -1,0 +1,236 @@
+body, html
+    +animation(opacity,2000ms)
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    background-color: $darkblue
+    font-family: 'Mosk Light 300'
+    button,input,textarea,select 
+        border: 0 
+        font-family: inherit
+        margin: 0 0 
+        padding: 0 0
+    * 
+        &::after,&::before 
+            -webkit-box-sizing: inherit
+            -moz-box-sizing: inherit
+            box-sizing: inherit
+        font-weight: normal 
+        -webkit-box-sizing: inherit
+        -moz-box-sizing: inherit
+        box-sizing: inherit
+        line-height: initial
+
+.main
+    background-repeat: no-repeat
+    @extend .flex
+    flex-flow: column wrap 
+    flex: 1
+    justify-content: center
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) 
+        min-height: calc(100vh - 109.1px)
+    padding-top: 35px
+    width: 100%
+    >.container
+        width: 100%
+        z-index: 4
+    +mq('836px', max)
+        padding-bottom: 60px
+        padding-top: 60px
+
+textarea,
+input
+    box-shadow: none
+    overflow: hidden
+    resize: none
+    &:invalid
+        color: $yellow
+        &[placeholder]
+            color: coral
+        &::-moz-placeholder
+            color: coral
+        &::-webkit-input-placeholder
+            color: coral
+        &:-ms-input-placeholder 
+            color: coral
+    &:focus
+        border: 0px
+        outline: 0px
+    &[placeholder]
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: white
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: 1920px
+    margin: 0 auto
+    padding-left: 60px
+    padding-right: 60px
+    +mq('836px', max)
+        padding-left: 30px
+        padding-right: 30px
+    +mq('414px', max)
+        padding-left: 50px
+        padding-right: 50px   
+    +mq('375px', max)
+        padding-left: 30px
+        padding-right: 30px        
+p 
+    b,strong 
+        &.strike
+            display: inline  
+            background: url(assets/imgs/text-strike.png) center center / 100% 100% no-repeat transparent 
+
+@for $i from 1 through 5
+    h#{$i}
+        font-weight: normal 
+    
+.logo
+    svg,
+    img 
+        height: 50.206px
+
+#wrap 
+    align-items: flex-start
+    @extend .flex
+    flex-flow: column wrap 
+    justify-content: flex-start 
+    min-height: 100vh
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) 
+        min-height: initial
+    overflow: hidden
+
+.btn
+    cursor: pointer
+    display: block 
+    &.btn-1
+        background-color: white
+        border: 6px $purple solid
+        color: $purple 
+        +rem("font-size", 16px)
+        font-family: 'Mosk Ultra-Bold 900'
+        padding: 5px 0
+        position: relative
+        text-transform: uppercase
+        text-align: center    
+        +mq('769px', min)
+            &:hover,
+            &.-active
+                background-color: $green
+                border-color: rgba(255,255,255,0)    
+                color: white
+
+.tcon
+    width: 32px
+
+.elements
+    left: 0
+    min-height: 100vh
+    position: absolute
+    top: 0
+    width: 100% 
+    z-index: 1
+    
+.element
+    display: block 
+    position: absolute
+    &.-stage
+        bottom: 0
+        left: 50%
+        margin-left: calc(-2440px/2) 
+        +mq('1440px', max)
+            margin-left: calc(-1680px/2)  
+        +mq('1024px', max) 
+            margin-left: calc(-1024px/2)  
+        width: 2440px 
+        z-index: 3
+        +mq('1440px', max)
+            width: 1680px   
+        +mq('1024px', max) 
+            width: 1024px       
+        +animation('stage', 1000ms)             
+.page
+    &:not(.page-contact):not(.landpage)
+        +animation(3000ms, morning) 
+
+.copyright
+    align-items: center
+    background-color: $yellow
+    bottom: 0
+    display: block
+    margin: 25px
+    height: 60px
+    overflow: hidden
+    position: fixed
+    right: 0
+    text-align: center  
+    +transition(1s)
+    width: 80px
+    z-index: 10
+    &-text 
+        color: white 
+        display: block 
+        +rem('font-size', 10px)
+        padding: 10px 
+        text-align: center
+        width: 100%
+        white-space: pre-line
+    img 
+        display: block 
+        margin: 14px auto 0
+        width: 42px
+    &:hover
+        height: 110px
+    +mq('836px', max)
+        display: none
+
+.loading-screen
+    align-items: center 
+    background-color: rgba(0,0,0,.5)
+    @extend .flex
+    flex-flow: column wrap
+    height: 100% 
+    justify-content: center
+    left: 0
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 100
+    .loader
+        margin: 0 auto
+        font-size: 25px
+        width: 1em
+        height: 1em
+        border-radius: 50%
+        position: relative
+        text-indent: -9999em
+        -webkit-animation: load5 1.1s infinite ease
+        animation: load5 1.1s infinite ease
+        -webkit-transform: translateZ(0)
+        -ms-transform: translateZ(0)
+        transform: translateZ(0)
+

@@ -1,0 +1,213 @@
+.plans
+    padding: 48px 30px 0
+    +mq('769px', max)
+        &:hover
+            padding: 70px 30px 0
+    +mq('768px', max)
+        padding: 20px 40px 0
+    &-list 
+        align-items: stretch    
+        @extend .flex
+        flex-flow: row wrap
+        +mq('768px', max)
+            display: block
+            flex-flow: column wrap
+        justify-content: center
+        margin: 0 -5px
+        +mq('768px', max)
+            margin: 0 auto
+        .plan-card
+            +mq('768px', max)
+                background-color: white
+                border: 5px $purple solid
+                &.-active
+                    border-color: $green
+                    .btn 
+                        background-color: $green 
+                        border-color: rgba(255,255,255,0)
+                        color: white 
+            color: $darkblue
+            cursor: default
+            +mq('769px', min)
+                cursor: pointer
+                &:hover
+                    transform: scale(1.05)
+            @extend .flex
+            flex-flow: column wrap
+            justify-content: space-between
+            flex: 0 0 auto 
+            +mq('768px', max)
+                &:not(:last-child)
+                    margin-left: auto 
+                    margin-right: auto
+                    margin-bottom: 15px
+            padding: 0 5px
+            +mq('768px', max)
+                padding: 10px
+            +transition(500ms)
+            width: 33.333%
+            +mq('768px', max)
+                width: 100%
+            z-index: 1
+            +mq('769px', min)
+                &:hover
+                    z-index: 3
+                    .btn 
+                        border-color: rgba(0,0,0,0)
+                        background-color: $green
+                        color: white 
+                    .plan-card-description
+                        border-color: $green
+                        // background: url(assets/imgs/plan-border-hover.png) center center / 100% 100% no-repeat white    
+                        +mq('768px', max)
+                            background: none
+                        >p
+                            +mq('769px', min)
+                                &:first-of-type
+                                    display: none 
+                                &:last-of-type
+                                    display: initial           
+            p 
+                color: $purple
+                +rem('font-size', 11px)
+            .btn 
+                margin: 0 auto 
+                padding-top: 0
+                padding-bottom: 0
+                width: 85%
+                +mq('768px', max)
+                    width: 100%
+            .close-card
+                display: block
+                +rem("font-size", 10px)
+                margin: 5px auto 0
+                text-decoration: underline!important
+                text-align: center  
+            .title
+                color: $purple
+                display: block 
+                flex: 0 0 auto
+                +rem(('font-size' : 16px, 'line-height' : 16px))
+                font-family: 'Mosk Ultra-Bold 900'
+                text-transform: uppercase
+                text-align: center
+                &:not(.-plan-price)
+                    display: block
+                    left: 0
+                    position: absolute
+                    top: -19px 
+                    +mq('768px', max)
+                        position: relative 
+                        top: 0
+                    width: 100%
+                &.-plan-price
+                    margin-top: 15px
+                    padding: 0 0 15px
+                    +mq('768px', max)
+                        display: none
+                        margin-top: 5px
+                        margin-bottom: 5px
+                        padding: 0
+            &.-best-option
+                +mq('768px', max)
+                    .title
+                        &:not(.-plan-price)
+                            background: url(assets/imgs/plan-brightness.png) center center / contain no-repeat transparent
+                            padding: 10px 0
+                            margin-bottom: -15px    
+                    &.-active    
+                        .title
+                            &:not(.-plan-price)
+                                background: none
+                                padding: 0
+                                margin-bottom: 0                                                
+                +mq('769px', min)
+                    &::before,
+                    &::after
+                        content: ""
+                        display: none
+                        left: 0 
+                        position: absolute 
+                        top: 0 
+                        z-index: 1
+                    &::before
+                        background: url(assets/imgs/featured-plan.png) center center / contain no-repeat transparent
+                        height: 50px
+                        left: calc(50% - 135px/2)
+                        top: -55px
+                        width: 135px
+                    &::after
+                        background: url(assets/imgs/plan-brightness.png) center center / contain no-repeat transparent
+                        height: 45px
+                        left: calc(50% - 165px/2)                    
+                        top: -40px
+                        width: 165px
+                    .title
+                        &:not(.-plan-price)
+                            +transition('500ms')
+                            z-index: 3
+                            &::before
+                                background: url(assets/imgs/plan-underline.png) center center no-repeat transparent
+                                bottom: -12px
+                                content: ""
+                                display: none
+                                height: 12px
+                                left: calc(50% - 144px/2)
+                                position: absolute 
+                                width: 0
+                                +width('500ms')
+                            &::after
+                                content: "Melhor Opção"
+                                display: none 
+                                +rem('line-height', 10px)
+                                font-size: 60%
+                                z-index: 3
+                            span 
+                                z-index: 3
+                    &:hover
+                        &::before,
+                        &::after
+                            display: block                    
+                        .title
+                            &:not(.-plan-price)   
+                                top: -30px                 
+                                &::before,
+                                &::after
+                                    display: block 
+                                &::before
+                                    width: 144px
+            &-description
+                background-color: white
+                +mq('769px', min)
+                    border: 5px $purple solid
+                // background: url(assets/imgs/plan-border.png) center center / 100% 100% no-repeat white
+                +mq('768px', max)
+                    background: none
+                @extend .flex
+                flex-flow: column wrap
+                justify-content: space-between                
+                flex: 1
+                +mq('769px', min)
+                    min-height: 380px
+                position: relative
+                margin: 15px auto
+                +mq('768px', max)
+                    margin: 0 auto
+                padding: 10px
+                >p 
+                    flex: 1
+                    +mq('768px', max)
+                        display: none
+                        padding-bottom: 15px
+                    &:last-of-type
+                        display: none 
+            &:nth-child(2)
+                margin: 0 -9px
+                +mq('768px', max)
+                    margin: 0 auto 15px
+            &:nth-child(3)
+                .title
+                    &:not(.-plan-price)
+                        +rem(('font-size' : 11px, 'line-height' : 20px))
+                        +mq('768px', max)
+                            +rem(('font-size' : 16px, 'line-height' : 16px))
