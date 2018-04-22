@@ -108,6 +108,18 @@ gulp.task('inc', function() {
     );
 });
 
+gulp.task('sitemap', function() {
+    return gulp.src('./*.xml')
+        .pipe(gulp.dest('dist')
+    );
+});
+
+gulp.task('favico', function() {
+    return gulp.src('./*.ico')
+        .pipe(gulp.dest('dist')
+    );
+});
+
 gulp.task('htaccess', function() {
     return gulp.src('./.htaccess')
         .pipe(gulp.dest('dist')
@@ -132,7 +144,7 @@ gulp.task('serve', ['sass', 'clean:js', 'vendors-js', 'commons-js'], function() 
 
 gulp.task('build', function (callback) {
     console.log('Building project...')
-    runSequence('clean:distjs', ['dist-js', 'css-dist', 'minify', 'images', 'fonts', 'htaccess', 'inc'],
+    runSequence('clean:distjs', ['dist-js', 'css-dist', 'minify', 'images', 'fonts', 'htaccess', 'inc', 'favico', 'sitemap'],
         callback
     );
 });
