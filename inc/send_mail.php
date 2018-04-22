@@ -42,22 +42,22 @@ if (!empty($_POST['user_email']) && !empty($_POST['user_nome']) && !empty($_POST
 	    if (mail($to, $subject, nl2br($template), $headers)) {
 	    	$_SESSION['msg'] = "Mensagem enviada com sucesso! <br> Obrigado pelo seu contato. <br> Responderemos em breve.";
 	    	$_SESSION['type'] = "success";
-	    	header('Location:../index.html');	    	
+	    	header('Location:https://www.alemdanota.com.br/');	    	
 	    } else {
 	    	$_SESSION['msg'] = "Ocorreu um erro. :( <br> Por algum motivo a mensagem não pode ser enviada. <br> Por favor tente novamente em alguns minutos, caso o erro persista contacte-nos por telefone. Sentimos muito pelo ocorrido. <br> :(";	
 	    	$_SESSION['type'] = "mistakes";    	
-	    	header('Location:../index.html');
+	    	header('Location:https://www.alemdanota.com.br/');
 	    }   
 
 
 	} else {
 		$_SESSION['msg'] = "O e-mail informado não é válido. <br> Por gentileza, verifique o e-mail e tente novamente.";
 		$_SESSION['type'] = "mistakes";		
-		header('Location:../index.html');
+		header('Location:https://www.alemdanota.com.br/');
 	}
 
 } else {
-	header('Location:../index.html');
+	header('Location:https://www.alemdanota.com.br/');
 }
 
 
