@@ -3,12 +3,12 @@ function mobileNavigation(e){
         nav = $(".navigation.-mobile");
     nav.toggleClass("-active"),
     e.parent().toggleClass("-active");
-}
+} 
 function copyright() {
     $(".main")
     .append("<a class='copyright' target='_blank' title='Concebido por Innominatum Consultoria' href='http://innominatum.eu/'><img alt='Concebido por Innominatum Consultoria' src='assets/imgs/svg/copyright.svg' height='35'/> <span class='copyright-text'>Concebido por Innominatum Consultoria</span></a>")
 }
-function sendWPP(e){
+function sendWPP(e){   
     var e = $(e);
     var telefone = "5521973819591";
     var saudacao = "Olá! Meu nome é";
@@ -16,8 +16,7 @@ function sendWPP(e){
     var msg = document.getElementById("user_msg").value;		
     var saudacaoencode = encodeURI(saudacao);		
     var url_base = "https://api.whatsapp.com/send?phone=" + telefone + "&text=" + saudacaoencode + "%20" + encodeURI(name) + "%20e%20" + encodeURI(msg);
-
-    e.attr("href", url_base);	
+    e.attr("href", url_base);	   
 }
 function spinner(){
     $(".book").append("<div class='loading-screen'><div class='loader'/></div></div>");
@@ -25,10 +24,11 @@ function spinner(){
         if($(".loading-screen").length){
             $(".loading-screen").remove();
         }
-    }, 3000);       
-}
+    }, 3000);        
+}  
 $(document).ready(function(){	
     setTimeout( function(){ 
-        copyright()
+        copyright() 
     }, 1000 );
+    transformicons.add('.tcon');
 });	
